@@ -1,0 +1,35 @@
+.button {
+    border: none;
+    outline: none;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+
+    &.primary {
+        background: var(--color-primary);
+        color: var(--color-white);
+        font-size: 13px;
+        transition: 0.3s background;
+
+        &:hover,
+        &:focus {
+            background: var(--color-primary-dark);
+        }
+    }
+    &.link {
+        background: transparent;
+        color: var(--color-primary);
+        font-size: 11px;
+        transition: 0.3s color;
+
+        &:hover,
+        &:focus {
+            color: var(--color-primary-dark);
+        }
+    }
+
+}
