@@ -1,0 +1,33 @@
+<div class="container centered">
+    <form class="login-form card">
+        <h3>Регистрация</h3>
+        <div class="inputs">
+            <div class="form-control">
+                <input class="full-width" type="email" name="email" placeholder="Почта">
+            </div>
+            <div class="form-control">
+                <input class="full-width" type="text" name="login"  placeholder="Логин">
+            </div>
+            <div class="form-control">
+                <input class="full-width" type="text" name="name" placeholder="Имя">
+            </div>
+            <div class="form-control">
+                <input class="full-width" type="text" name="lastname" placeholder="Фамилия">
+            </div>
+            <div class="form-control">
+                <input class="full-width" type="tel" name="phone" placeholder="Телефон">
+            </div>
+            <div class="form-control">
+                <input class="full-width" type="password" name="password" placeholder="Пароль">
+            </div>
+            <div class="form-control">
+                <input class="full-width" type="password" name="password" placeholder="Повторите пароль">
+            </div>
+        </div>
+
+        <div class="buttons">
+            {{> Button text="Сохранить" type="submit" classes="button full-width primary"}}
+        </div>
+        {{> Button text="Вход" type="button" href="/login" classes="button full-width link"}}
+    </form>
+</div>
