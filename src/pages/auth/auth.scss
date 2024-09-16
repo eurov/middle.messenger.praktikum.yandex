@@ -15,7 +15,7 @@
   }
 
   .buttons {
-    margin-top: 31px;
+    margin-top: 30px;
   }
 }
 
@@ -27,34 +27,9 @@
 
   input {
     border: none;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-blue);
     outline: none;
     font-size: 13px;
     padding-bottom: 7px;
-
-    &:focus,
-    &.not-empty {
-      &+label {
-        top: 0;
-        font-size: 9px;
-      }
-    }
-  }
-
-  label {
-    color: var(--color-gray);
-    font-size: 13px;
-    position: absolute;
-    top: 22px;
-    left: 0;
-    transition: 0.3s all;
-  }
-
-  .error {
-    color: var(--color-danger);
-    font-size: 8px;
-    font-weight: 400;
-    position: absolute;
-    top: 49px;
   }
 }
