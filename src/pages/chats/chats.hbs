@@ -1,0 +1,20 @@
+<div class="chat__container">
+    <div class="chat__chats-sidebar">
+        <a href="/profile" class="chat__profile-link">Profile <img src="{{{icons.arrow}}}" /></a>
+        <form class="chat__search-container">
+            <input type="text" placeholder="Search" class="chat__search" name="search">
+            <img src="{{{icons.search}}}" />
+        </form>
+
+        <ul class="chat__chats-list">
+            {{#each chats}}
+            {{{this}}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="chat__main-screen">
+        <div class="container centered">
+            <div class="chat__empty-message">Select a chat to open a dialog box</div>
+        </div>
+    </div>
+</div>
