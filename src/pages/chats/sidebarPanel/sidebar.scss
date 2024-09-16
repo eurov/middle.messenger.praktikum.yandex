@@ -1,0 +1,96 @@
+.chat-list-item {
+    padding: 10px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    position: relative;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 4px;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "avatar name time"
+        "avatar message ."
+        "avatar message counter";
+
+    &:before,
+    &:last-child:after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 10px;
+        right: 10px;
+        height: 1px;
+        background: #EAEAEA;
+    }
+
+    &:last-child {
+        margin-bottom: 2px;
+
+        &:after {
+            top: auto;
+            bottom: -2px;
+        }
+    }
+
+    &.active {
+        background: #E4EDFD;
+    }
+
+    &__unread-counter {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: var(--color-blue);
+        color: var(--color-white);
+        font-size: 11px;
+        line-height: 12px;
+        grid-area: counter;
+        justify-self: end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__time {
+        color: var(--color-bg-gray);
+        font-size: 9px;
+        line-height: 13px;
+        grid-area: time;
+        justify-self: end;
+        color: var(--color-text-gray);  
+    }
+
+    &__name {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--color-black);
+        grid-area: name;
+    }
+
+    &__message {
+        // color: var(--color-bg-gray);
+        font-size: 12px;
+        line-height: 15px;
+        grid-area: message;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        white-space: pre-wrap;
+        color: var(--color-text-gray);
+    }
+
+    &__avatar {
+        width: 47px;
+        height: 47px;
+        background: #EFEFEF;
+        grid-area: avatar;
+        border-radius: 50%;
+    }
+
+    &__mine-mark {
+        color: var(--color-black);
+    }
+}
