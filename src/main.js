@@ -1,7 +1,10 @@
 import './components/index.partials.js'
-import { loginPage } from './pages/login/index.login.js';
-import { signupPage } from './pages/signup/index.signup.js';
+import { loginPage } from './pages/auth/login/index.login.js';
+import { signupPage } from './pages/auth/signup/index.signup.js';
 import { profilePage } from './pages/profile/index.profile.js';
+import { chatsPage } from './pages/chats/index.chats.js';
+import { dialogsDispatcher } from './pages/chats/index.chats.js';
+import { notFoundPage } from './pages/errors/404/404.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,12 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
             app.innerHTML = profilePage();
             break
         case '/chats':
-            console.log('Hi')
-            break
-        case '/signup':
-            console.log('Hi')
+            app.innerHTML = chatsPage();
+            document.querySelectorAll('.chat-list-item').forEach((el) => {
+                el.addEventListener('click', dialogsDispatcher);
+            });
             break
         default:
-            console.log('Bye')
+            app.innerHTML = notFoundPage();
     }
 });
+
