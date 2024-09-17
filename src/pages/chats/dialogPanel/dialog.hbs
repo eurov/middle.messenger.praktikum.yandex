@@ -3,7 +3,7 @@
         <div class="chat-dialog__avatar"></div>
         <div class="chat-dialog__name">{{activeChat.name}}</div>
         <button class="chat-dialog__menu-button">
-            {{!-- <img src="{{moreVertical}}" /> --}}
+            {{!-- <img src="#" /> --}}
         </button>
     </div>
 
@@ -14,7 +14,7 @@
             <div class="chat-dialog__message-text">{{this.text}}</div>
             <div class="chat-dialog__message-time">
                 {{#if this.delivered}}
-                {{!-- <img src="{{../../messageDelivered}}" /> --}}
+                {{!-- <img src="#" /> --}}
                 {{/if}}
                 {{this.time}}
             </div>
@@ -24,13 +24,13 @@
 
     <form class="chat-dialog__input-container">
         <button type="button" class="chat-dialog__attach-button">
-            {{!-- <img src="{{attach}}" /> --}}
+            {{!-- <img src="#" /> --}}
         </button>
 
         <input class="chat-dialog__input" name="message" placeholder="Message">
 
         <button class="chat-dialog__send" type="submit">
-            {{!-- <img src="{{messageArrow}}" /> --}}
+            {{!-- <img src="#" /> --}}
         </button>
     </form>
 </div>
