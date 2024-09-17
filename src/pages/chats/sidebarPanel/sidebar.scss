@@ -70,7 +70,6 @@
     }
 
     &__message {
-        // color: var(--color-bg-gray);
         font-size: 12px;
         line-height: 15px;
         grid-area: message;
@@ -78,7 +77,6 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        white-space: pre-wrap;
         color: var(--color-text-gray);
     }
 
@@ -92,5 +90,6 @@
 
     &__mine-mark {
         color: var(--color-black);
+        font-size: 12px;
     }
 }
