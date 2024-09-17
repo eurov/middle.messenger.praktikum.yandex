@@ -7,29 +7,48 @@ import { dialogsDispatcher } from './pages/chats/index.chats.js';
 import { notFoundPage } from './pages/errors/404/404.js';
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    const app = document.getElementById("app");
-    const route = window.location.pathname;
-
-    switch (route) {
-        case '/':
-        case '/login':
-            app.innerHTML = loginPage();
-            break
-        case '/signup':
-            app.innerHTML = signupPage();
-            break
-        case '/profile':
-            app.innerHTML = profilePage();
-            break
-        case '/chats':
-            app.innerHTML = chatsPage();
-            document.querySelectorAll('.chat-list-item').forEach((el) => {
-                el.addEventListener('click', dialogsDispatcher);
-            });
-            break
-        default:
-            app.innerHTML = notFoundPage();
+class App {
+    constructor() {
+        this.page = document.getElementById('app');
+        this.url = window.location.pathname;
     }
+    preventReboot(){
+        const pageLinks = this.page.getElementsByTagName("a")
+        for (const link of pageLinks) {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.url = e.target.attributes.href.textContent
+                this.render()
+            })
+        }
+    }
+    render() {
+        switch (this.url) {
+            case '/':
+            case '/login':
+                this.page.innerHTML = loginPage();
+                break
+            case '/signup':
+                this.page.innerHTML = signupPage();
+                break
+            case '/profile':
+                this.page.innerHTML = profilePage();
+                break
+            case '/chats':
+                this.page.innerHTML = chatsPage();
+                document.querySelectorAll('.chat-list-item').forEach((el) => {
+                    el.addEventListener('click', dialogsDispatcher);
+                });
+                break
+            default:
+                this.page.innerHTML = notFoundPage();
+        }
+        this.preventReboot();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const app = new App()
+    app.render()
 });
 
