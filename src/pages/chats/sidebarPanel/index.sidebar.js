@@ -1,24 +1,18 @@
 import Handlebars from "handlebars";
-import templateFunction from './sidebar.hbs?raw';
-// import { formatTimeForChat } from '../../utils';
-
+import template from './sidebar.hbs?raw';
 
 
 export const chatListItem = ({ messages, ...rest }) => {
     const lastMessage = messages[messages.length - 1];
     const lastMessageIsYours = lastMessage.senderIsYou;
-    // const timeString = formatTimeForChat(lastMessage.time);
     const unreadCount = messages.filter((message) => message.unread).length;
 
-    const compiled = Handlebars.compile(templateFunction)({
-        time: "11:22",
-        // time: timeString,
+    const compiled = Handlebars.compile(template)({
+        time: lastMessage.time,
         lastMessageIsYours,
         lastMessage: lastMessage.text,
         unreadCount,
         ...rest
     })
-    
     return compiled;
-
 }

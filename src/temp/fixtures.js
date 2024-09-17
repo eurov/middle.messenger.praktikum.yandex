@@ -21,7 +21,7 @@ export const testChatsData = [{
             senderIsYou: false,
             time: '11:01',
             text: 'Long time no see!',
-            senderIsYou: true,
+            unread: true,
         },
     ]
 }, {
