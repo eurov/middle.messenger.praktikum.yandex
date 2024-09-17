@@ -2,17 +2,13 @@
     <form class="login-form card">
         <h3>Log in</h3>
         <div class="inputs">
-            <div class="form-control">
-                <input class="full-width" type="text" name="login" id="login" placeholder="Login">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="password" name="password" id="password" placeholder="Password">
-            </div>
+            {{> formInput type="text" name="login" placeholder="Username"}}
+            {{> formInput type="password" name="password" placeholder="Password"}}
         </div>
 
         <div class="buttons">
-            {{> Button text="Continue" type="submit" href="/chats" classes="button full-width primary"}}
+            {{> button href="/chats" class="button primary" text="Sign in"}}
         </div>
-            {{> Button text="Create an account" type="button" href="/signup" classes="button full-width link"}}
+            {{> button href="/signup" class="button link" text="Create account"}}
     </form>
 </div>

@@ -2,32 +2,17 @@
     <form class="login-form card">
         <h3>Registration</h3>
         <div class="inputs">
-            <div class="form-control">
-                <input class="full-width" type="email" name="email" placeholder="Email">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="text" name="login"  placeholder="Login">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="text" name="name" placeholder="Name">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="text" name="lastname" placeholder="Last name">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="tel" name="phone" placeholder="Phone">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="password" name="password" placeholder="Password">
-            </div>
-            <div class="form-control">
-                <input class="full-width" type="password" name="password" placeholder="Repeat password">
-            </div>
+            {{> formInput type="email" name="email" placeholder="Email"}}
+            {{> formInput type="text" name="login" placeholder="Username"}}
+            {{> formInput type="text" name="first_name" placeholder="First name"}}
+            {{> formInput type="text" name="second_name" placeholder="Second name"}}
+            {{> formInput type="tel" name="phone" placeholder="Phone"}}
+            {{> formInput type="password" name="password" placeholder="Password"}}
+            {{> formInput type="password" name="password" placeholder="Repeat password"}}
         </div>
-
         <div class="buttons">
-            {{> Button text="Save" type="submit" classes="button full-width primary"}}
+            {{> button href="/profile" class="button primary" text="Create account"}}
         </div>
-        {{> Button text="Log in" type="button" href="/login" classes="button full-width link"}}
+        {{> button href="/login" class="button link" text="Sign in"}}
     </form>
 </div>
