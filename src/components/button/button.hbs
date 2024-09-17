@@ -1,3 +1,5 @@
-<{{#if href}}a href="{{href}}" {{else}}button{{/if}} class="{{classes}}" type="{{type}}">
-    {{text}}
-</{{#if href}}a{{else}}button{{/if}}>
+{{#if href}}
+<a href="{{href}}" class="{{class}}" type="{{type}}">{{text}}</a>
+{{else}}
+<button class="{{class}}" type="{{type}}">{{text}}</button>
+{{/if}}
