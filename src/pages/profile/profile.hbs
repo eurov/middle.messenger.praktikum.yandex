@@ -16,23 +16,33 @@
                 {{#each profileData}}
                 <div class="profile__field">
                     <div class="profile__field-caption">{{this.key}}</div>
-                    <div class="profile__field-value">{{this.value}}</div>
+                    <div class="profile__field-value">
+                        {{#if../edit }}
+                            <input type="text" class="profile__field-input" placeholder="{{this.value}}">
+                        {{else}}
+                            {{this.value}}
+                        {{/if}}
+                    </div>
                 </div>
                 {{/each}}
             </div>
 
             <div class="profile__controls">
-                <div class="profile__field">
-                    {{> button href="#" class="profile__controls-link" text="Edit"}}
-                </div>
+                {{#if edit}}
+                    {{> button href="/profile" class="profile__save-button button primary" text="Save"}}
+                {{else}}
+                    <div class="profile__field">
+                        {{> button href="/profile/edit" class="profile__controls-link link" text="Edit"}}
+                    </div>
 
-                <div class="profile__field">
-                    {{> button href="#" class="profile__controls-link" text="Change password"}}
-                </div>
+                    <div class="profile__field">
+                        {{> button href="#" class="profile__controls-link" text="Change password"}}
+                    </div>
 
-                <div class="profile__field">
-                    {{> button href="/login" class="profile__controls-link profile__controls-link_red" text="Log out"}}
-                </div>
+                    <div class="profile__field">
+                        {{> button href="/login" class="profile__controls-link profile__controls-link_red" text="Log out"}}
+                    </div>
+                {{/if}}
             </div>
         </form>
     </div>
