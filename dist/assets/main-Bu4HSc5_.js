@@ -76,12 +76,12 @@ Expecting `+x.join(", ")+", got '"+(this.terminals_[k]||k)+"'":q="Parse error on
             <div class="profile__personal-data">
                 {{#each profileData}}
                 <div class="profile__field">
-                    <div class="profile__field-caption">{{this.key}}</div>
+                    <div class="profile__field-caption">{{this.kwargs.key}}</div>
                     <div class="profile__field-value">
                         {{#if../edit }}
-                            <input type="text" class="profile__field-input" placeholder="{{this.value}}">
+                            <input type="text" class="profile__field-input" name={{this.name}} placeholder="{{this.kwargs.value}}">
                         {{else}}
-                            {{this.value}}
+                            {{this.kwargs.value}}
                         {{/if}}
                     </div>
                 </div>
@@ -108,7 +108,7 @@ Expecting `+x.join(", ")+", got '"+(this.terminals_[k]||k)+"'":q="Parse error on
         </form>
     </div>
 </div>
-`,In={Name:"Homer","Last name":"Simpson",Email:"donut@inbox.com",Login:"D'oh","Chat name":"Homer",Phone:"+7(999)1234567"},kt=[{uuid:"1",name:"Kate",messages:[{senderIsYou:!1,time:"11:00",text:"Hello!"},{senderIsYou:!1,time:"11:01",text:"Long time no see!",unread:!0}]},{uuid:"2",name:"Tom",messages:[{senderIsYou:!1,time:"13:30",text:"Hey there!"}]},{uuid:"3",name:"Mary",messages:[{senderIsYou:!1,time:"10:20",text:"Good morning!"},{senderIsYou:!1,time:"10:21",text:"What a nice day. Isn't it?"},{time:"10:25",text:"Indeed!",senderIsYou:!0}]}],Nn=Object.entries(In).map(([e,t])=>({key:e,value:t})),it=e=>D.compile(An)({...e,profileData:Nn}),Rn=`<div class="chat__container">
+`,In={first_name:{key:"Name",value:"Homer"},second_name:{key:"Second name",value:"Simpson"},login:{key:"Login",value:"D'oh"},display_name:{key:"Chat name",value:"Homer"},email:{key:"Email",value:"donut@inbox.com"},phone:{key:"Phone",value:"+7(999)1234567"}},kt=[{uuid:"1",name:"Kate",messages:[{senderIsYou:!1,time:"11:00",text:"Hello!"},{senderIsYou:!1,time:"11:01",text:"Long time no see!",unread:!0}]},{uuid:"2",name:"Tom",messages:[{senderIsYou:!1,time:"13:30",text:"Hey there!"}]},{uuid:"3",name:"Mary",messages:[{senderIsYou:!1,time:"10:20",text:"Good morning!"},{senderIsYou:!1,time:"10:21",text:"What a nice day. Isn't it?"},{time:"10:25",text:"Indeed!",senderIsYou:!0}]}],Nn=Object.entries(In).map(([e,t])=>({name:e,kwargs:t})),it=e=>D.compile(An)({...e,profileData:Nn}),Rn=`<div class="chat__container">
     <div class="chat__chats-sidebar">
         <a href="/profile" class="chat__profile-link">
             Profile
