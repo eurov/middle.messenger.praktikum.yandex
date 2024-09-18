@@ -5,9 +5,10 @@ import { testProfileData } from "../../temp/fixtures";
 
 const profileData = Object.entries((testProfileData)).map(([key, value]) => ({key, value}));
 
-export const profilePage = () => {
+export const profilePage = (kwargs) => {
     const compiled = Handlebars.compile(template);
     return compiled({
+        ...kwargs,
         profileData
     });
 };
