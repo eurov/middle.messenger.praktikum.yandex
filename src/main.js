@@ -34,6 +34,9 @@ class App {
             case '/profile':
                 this.page.innerHTML = profilePage();
                 break
+            case '/profile/edit':
+                this.page.innerHTML = profilePage({edit: true});
+                break
             case '/chats':
                 this.page.innerHTML = chatsPage();
                 document.querySelectorAll('.chat-list-item').forEach((el) => {
