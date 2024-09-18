@@ -15,12 +15,12 @@
             <div class="profile__personal-data">
                 {{#each profileData}}
                 <div class="profile__field">
-                    <div class="profile__field-caption">{{this.key}}</div>
+                    <div class="profile__field-caption">{{this.kwargs.key}}</div>
                     <div class="profile__field-value">
                         {{#if../edit }}
-                            <input type="text" class="profile__field-input" placeholder="{{this.value}}">
+                            <input type="text" class="profile__field-input" name={{this.name}} placeholder="{{this.kwargs.value}}">
                         {{else}}
-                            {{this.value}}
+                            {{this.kwargs.value}}
                         {{/if}}
                     </div>
                 </div>
