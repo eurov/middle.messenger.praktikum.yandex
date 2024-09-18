@@ -1,10 +1,10 @@
 export const testProfileData = {
-    'Name': 'Homer',
-    'Last name': 'Simpson',
-    'Email': 'donut@inbox.com',
-    'Login': 'D\'oh',
-    'Chat name': 'Homer',
-    'Phone': '+7(999)1234567'
+    first_name: {key: 'Name', value: 'Homer'},
+    second_name: {key: 'Second name', value: 'Simpson'},
+    login: {key: 'Login', value: 'D\'oh'},
+    display_name: { key: 'Chat name', value: 'Homer'},
+    email: { key: 'Email', value: 'donut@inbox.com'},
+    phone: { key: 'Phone', value: '+7(999)1234567'},
 }
 
 
