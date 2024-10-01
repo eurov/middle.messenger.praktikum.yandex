@@ -1,0 +1,14 @@
+<div class="container centered">
+    <form class="login-form card">
+        <h3>Log in</h3>
+        <div class="inputs">
+            {{> formInput type="text" name="login" placeholder="Username"}}
+            {{> formInput type="password" name="password" placeholder="Password"}}
+        </div>
+
+        <div class="buttons">
+            {{> button href="/chats" class="button primary" text="Sign in"}}
+            {{> button href="/signup" class="button link" text="Create account"}}
+        </div>
+    </form>
+</div>

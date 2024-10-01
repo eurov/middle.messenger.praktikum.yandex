@@ -1,0 +1,15 @@
+.error-page {
+    text-align: center;
+
+    &__code {
+        font-size: 40px;
+        color: var(--color-black);
+        margin-bottom: 20px;
+    }
+
+    &__message {
+        font-size: 20px;
+        color: var(--color-black);
+        margin-bottom: 70px;
+    }
+}

@@ -1,0 +1,21 @@
+.login-form {
+  width: 340px;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+
+  h3 {
+    text-align: center;
+    margin-bottom: 37px;
+  }
+
+  .inputs {
+    flex-grow: 1;
+  }
+
+  .buttons {
+    margin-top: 30px;
+  }
+}
+

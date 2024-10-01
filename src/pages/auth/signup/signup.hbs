@@ -1,0 +1,18 @@
+<div class="container centered">
+    <form class="login-form card">
+        <h3>Registration</h3>
+        <div class="inputs">
+            {{> formInput type="email" name="email" placeholder="Email"}}
+            {{> formInput type="text" name="login" placeholder="Username"}}
+            {{> formInput type="text" name="first_name" placeholder="First name"}}
+            {{> formInput type="text" name="second_name" placeholder="Second name"}}
+            {{> formInput type="tel" name="phone" placeholder="Phone"}}
+            {{> formInput type="password" name="password" placeholder="Password"}}
+            {{> formInput type="password" name="password" placeholder="Repeat password"}}
+        </div>
+        <div class="buttons">
+            {{> button href="/profile" class="button primary" text="Create account"}}
+        </div>
+        {{> button href="/login" class="button link" text="Sign in"}}
+    </form>
+</div>
