@@ -7,7 +7,11 @@ import { dialogsDispatcher } from './pages/chats/index.chats.js';
 import { notFoundPage } from './pages/errors/404/404.js';
 
 
+
 class App {
+    private page: HTMLElement;
+    private url: string;
+
     constructor() {
         this.page = document.getElementById('app');
         this.url = window.location.pathname;
@@ -22,7 +26,7 @@ class App {
             })
         }
     }
-    render() {
+    public render() {
         switch (this.url) {
             case '/':
             case '/login':
