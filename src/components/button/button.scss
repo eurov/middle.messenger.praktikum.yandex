@@ -1,13 +1,13 @@
 .button {
     border: none;
-    outline: none;
-    padding: 12px;
     border-radius: 8px;
-    text-align: center;
+    box-sizing: border-box;
     cursor: pointer;
     display: block;
+    outline: none;
+    padding: 12px;
+    text-align: center;
     text-decoration: none;
-    box-sizing: border-box;
 
     &.primary {
         background: var(--color-blue);
@@ -20,6 +20,7 @@
             background: var(--color-dark-blue);
         }
     }
+
     &.link {
         background: transparent;
         color: var(--color-blue);

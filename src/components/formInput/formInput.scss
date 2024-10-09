@@ -1,14 +1,14 @@
 .form-control {
-    position: relative;
-    padding-top: 17px;
-    padding-bottom: 15px;
     margin-bottom: 16px;
+    padding-bottom: 15px;
+    padding-top: 17px;
+    position: relative;
 
     input {
         border: none;
         border-bottom: 1px solid var(--color-blue);
-        outline: none;
         font-size: 13px;
+        outline: none;
         padding-bottom: 7px;
     }
 }

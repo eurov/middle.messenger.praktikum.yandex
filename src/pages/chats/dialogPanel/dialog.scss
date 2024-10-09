@@ -1,68 +1,68 @@
 .chat-dialog {
     display: flex;
     flex-direction: column;
-    padding: 0 20px;
     height: 100vh;
+    padding: 0 20px;
 
     &__header {
-        height: 54px;
+        align-items: center;
         border-bottom: 1px solid #EAEAEA;
         display: flex;
-        align-items: center;
-        gap: 10px;
         flex-shrink: 0;
+        gap: 10px;
+        height: 54px;
     }
 
     &__avatar {
-        width: 34px;
-        height: 34px;
         background: #EFEFEF;
         border: none;
         border-radius: 50%;
+        height: 34px;
+        width: 34px;
     }
 
     &__name {
-        font-size: 13px;
-        font-weight: 600;
         color: var(--color-black);
         flex-grow: 1;
+        font-size: 13px;
+        font-weight: 600;
     }
 
     &__menu-button {
         border: none;
-        outline: none;
         cursor: pointer;
-        padding: 0;
         margin: 0 12px 0 0;
+        outline: none;
+        padding: 0;
     }
 
     &__messages {
-        flex-grow: 1;
+        align-items: flex-start;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 30px 0;
+        flex-grow: 1;
         gap: 10px;
         overflow: auto;
+        padding: 30px 0;
     }
 
     &__date-label {
-        font-size: 12px;
         color: var(--color-text-gray);
+        font-size: 12px;
         margin: 30px auto;
     }
 
     &__message {
-        padding: 11px;
         background: #F8F8F8;
-        border-radius: 0 10px 10px 10px;
+        border-radius: 0 10px 10px;
         max-width: 400px;
         min-width: 115px;
+        padding: 11px;
 
         &_yours {
-            border-radius: 10px 10px 0 10px;
-            background: #E4EDFD;
             align-self: flex-end;
+            background: #E4EDFD;
+            border-radius: 10px 10px 0;
 
             .chat-dialog__message-time {
                 color: var(--color-blue);
@@ -70,42 +70,42 @@
         }
 
         &-text {
+            color: var(--color-black);
             font-size: 12px;
             line-height: 15px;
-            color: var(--color-black);
         }
 
         &-time {
-            font-size: 9px;
             color: var(--color-text-gray);
+            font-size: 9px;
             margin-top: 7px;
             text-align: right;
         }
     }
 
     &__input-container {
-        height: 54px;
+        align-items: center;
         border-top: 1px solid #EAEAEA;
         display: flex;
-        align-items: center;
-        gap: 10px;
         flex-shrink: 0;
+        gap: 10px;
+        height: 54px;
     }
 
     &__attach-button {
+        background: transparent;
         border: none;
         outline: none;
-        background: transparent;
     }
 
     &__input {
         background: #EFEFEF;
-        flex-grow: 1;
-        border-radius: 30px;
         border: none;
+        border-radius: 30px;
+        flex-grow: 1;
+        font-size: 12px;
         outline: none;
         padding: 10px 20px;
-        font-size: 12px;
 
         &::placeholder {
             color: var(--color-text-gray);
@@ -113,17 +113,17 @@
     }
 
     &__send {
-        width: 28px;
-        height: 28px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
         align-items: center;
-        padding: 0;
-        margin: 0;
         background: var(--color-blue);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        height: 28px;
+        justify-content: center;
+        margin: 0;
+        outline: none;
+        padding: 0;
+        width: 28px;
     }
 }
