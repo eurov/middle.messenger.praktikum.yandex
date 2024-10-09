@@ -6,14 +6,15 @@ module.exports = {
   },
   extends: [
     'airbnb-typescript',
-    'standard-with-typescript',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'stylelint-scss'],
+  plugins: ['@typescript-eslint'],
   rules: {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
