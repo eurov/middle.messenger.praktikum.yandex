@@ -2,7 +2,7 @@
 import template from './login.tpl'
 import { Block } from '@utils/block';
 import Input from '@components/formInput/input';
-import Button from '@components/button/button';
+import Button from '@/components/button/index.button';
 // import { getFormData } from '../../utils/getFormData.ts';
 
 
