@@ -1,37 +1,21 @@
 // import template from './login.hbs?raw'
-import template from './login.tpl'
+import template from './login.tpl';
 import { Block } from '@utils/block';
-import Input from '@components/formInput/input';
+import Input from '@/components/formInput/index.input';
 import Button from '@/components/button/index.button';
-// import { getFormData } from '../../utils/getFormData.ts';
+import { getFormData } from '@/utils/formData';
 
 
-const getFormData = (event: SubmitEvent): Record<string, string> => {
-    const formData: Record<string, string> = {};
-    event.preventDefault();
-    if (event.target == null) return formData;
-    const allInput = (event.target as HTMLFormElement).querySelectorAll('input');
-    allInput.forEach((input: HTMLInputElement) => {
-        formData[input.name] = input.value;
-        input.dispatchEvent(new Event('blur'));
-    });
-    console.info(formData);
-    return formData;
-};
 
 const input = [new Input({
     type: 'text',
     name: 'login',
-    required: true,
-    title: 'Логин',
     placeholder: 'Username',
     rules: ['login-valid'],
 }), new Input({
     type: 'password',
     name: 'password',
     placeholder: 'Password',
-    required: true,
-    title: 'Пароль',
     rules: ['password-valid'],
 })];
 
@@ -43,8 +27,8 @@ const button = [new Button({
 }), new Button({
     text: 'Create account',
     class: 'button link',
-    href: '/signUp'
-})]
+    href: '/signup',
+})];
 
 
 export default class LoginPage extends Block {

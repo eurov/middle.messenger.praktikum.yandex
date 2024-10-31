@@ -5,6 +5,6 @@ export default `
             {{{input}}}
         </div>
             {{{ button }}}
-    </form>`
+    </form>`;
 
 
