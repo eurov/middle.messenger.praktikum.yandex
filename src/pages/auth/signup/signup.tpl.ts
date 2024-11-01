@@ -1,4 +1,4 @@
-export default `<form action="" method="get" class="login-form card">
+export default `<form class="login-form card">
     <h3>Registration </h3>
     <div class="inputs">
         {{{input}}}
@@ -6,5 +6,6 @@ export default `<form action="" method="get" class="login-form card">
       <div class="buttons">
         {{{ button }}}
       </div>
+      <a class="button link" href="/login">Sign in</a>
 </form>`;
 

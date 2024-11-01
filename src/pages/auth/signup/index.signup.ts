@@ -2,67 +2,67 @@ import template from './signup.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/formInput/index.input';
 import Button from '@/components/button/index.button';
-import { getFormData } from '@/utils/formData';
+import { validateFormSubmit } from '@/utils/validation';
 
 
-const type = 'text';
-const input = [
+const inputProps = [
     {
         name: 'email',
         placeholder: 'Email',
         rules: ['email-valid'],
+        required: true
     },
     {
         name: 'username',
         placeholder: 'Username',
         rules: ['username-valid'],
+        required: true
     },
     {
         name: 'first_name',
         placeholder: 'First name',
         rules: ['name-valid'],
+        required: true
     },
     {
         name: 'second_name',
         placeholder: 'Second name',
         rules: ['name-valid'],
+        required: true
     },
     {
         name: 'phone',
         placeholder: 'Phone',
         rules: ['phone-valid'],
+        required: true
     },
     {
         name: 'password',
         placeholder: 'Password',
         rules: ['password-valid'],
+        required: true
     },
     {
         name: 'password',
         placeholder: 'Repeat password',
         rules: ['password-valid'],
+        required: true
     },
 ];
 const button = [new Button({
     text: 'Create account',
-    class: 'button primary',
-    href: '/chats',
-
-}), new Button({
-    text: 'Sign in',
-    class: 'button link',
-    href: '/login',
+    classes: ['button', 'primary'],
 })];
 
 export default class SignupPage extends Block {
     constructor() {
         super({
-            style: ['container', 'centered'],
+            classes: ['container', 'centered'],
             events: {
-                submit: getFormData,
+                submit: validateFormSubmit,
             },
             children: {
-                input: input.map((field) => new Input({ ...field })),
+                input: inputProps.map((props) => new Input({ ...props })),
                 button
             },
         });
