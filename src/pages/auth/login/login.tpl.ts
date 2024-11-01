@@ -4,7 +4,12 @@ export default `
         <div class="inputs">
             {{{input}}}
         </div>
-            {{{ button }}}
+        <div class="buttons">
+                {{{ button }}}
+            <a class="button link" href="/signup">
+                Create account
+            </a>
+        </div>
     </form>`;
 
 

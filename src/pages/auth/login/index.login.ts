@@ -1,46 +1,41 @@
-// import template from './login.hbs?raw'
 import template from './login.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/formInput/index.input';
 import Button from '@/components/button/index.button';
-import { getFormData } from '@/utils/formData';
+import { validateLoginForm } from '@/utils/validation';
 
 
 
 const input = [new Input({
-    type: 'text',
     name: 'login',
     placeholder: 'Username',
     rules: ['login-valid'],
+    required: true
 }), new Input({
     type: 'password',
     name: 'password',
     placeholder: 'Password',
     rules: ['password-valid'],
+    required: true  
 })];
 
 const button = [new Button({
     text: 'Sign in',
-    class: 'button primary',
-    href: '/chats',
-
-}), new Button({
-    text: 'Create account',
-    class: 'button link',
-    href: '/signup',
+    classes: ['button', 'primary'],
 })];
+
 
 
 export default class LoginPage extends Block {
     constructor() {
         super({
-            style: ['container', 'centered'],
+            classes: ['container', 'centered'],
             children: {
                 input,
                 button,
             },
             events: {
-                submit: getFormData,
+                submit: validateLoginForm,
             },
         });
     }
