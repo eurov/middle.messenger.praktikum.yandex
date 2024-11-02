@@ -1,7 +1,7 @@
 
 import input from './input.tpl';
 import { Block } from '@utils/block';
-import { validate } from '@utils/validation';
+import { validateInput } from '@/utils/helpers';
 
 
 interface IInputProps {
@@ -11,16 +11,17 @@ interface IInputProps {
     label?: string,
     value?: string,
     rules?: string[],
+    required?: boolean
 }
 
 export default class Input extends Block<IInputProps> {
     constructor(props: IInputProps) {
         super({
             ...props,
-            style: 'input',
+            classes: 'input',
             events: {
                 blur: (event: any) => {
-                    const validateResult = validate(event.target.value, props.rules || []);
+                    const validateResult = validateInput(event.target.value, props.rules || []);
                     if (validateResult) {
                         this.setProps({
                             ...this.props,
