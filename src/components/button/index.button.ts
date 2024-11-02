@@ -1,15 +1,14 @@
-import { button } from './button.tpl';
+import template from './button.tpl';
 import { Block } from '@utils/block';
 
-export default class Button extends Block<{ text: string }> {
-    constructor(props) {
+export default class Button extends Block {
+    constructor(props, tagName: string = 'button') {
         super({
             ...props,
-            style: 'buttons',
-        });
+        }, tagName);
     }
 
     render(): DocumentFragment {
-        return this.compile(button, this.props);
+        return this.compile(template, this.props);
     }
 }

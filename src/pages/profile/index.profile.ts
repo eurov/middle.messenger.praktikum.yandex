@@ -26,9 +26,10 @@ const link = [new Link({
 ];
 
 export default class ProfilePage extends Block {
-    constructor() {
+    constructor({edit = false}) {
         super({
             classes: 'profile__page',
+            edit,
             profileData,
             children: {
                 button,

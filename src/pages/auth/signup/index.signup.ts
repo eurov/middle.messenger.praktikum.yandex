@@ -2,7 +2,7 @@ import template from './signup.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/formInput/index.input';
 import Button from '@/components/button/index.button';
-import { validateFormSubmit } from '@/utils/validation';
+import { validateFormSubmit } from '@/utils/helpers';
 
 
 const inputProps = [

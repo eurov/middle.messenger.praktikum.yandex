@@ -2,7 +2,7 @@ import template from './login.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/formInput/index.input';
 import Button from '@/components/button/index.button';
-import { validateLoginForm } from '@/utils/validation';
+import { validateFormSubmit } from '@/utils/helpers';
 
 
 
@@ -35,7 +35,7 @@ export default class LoginPage extends Block {
                 button,
             },
             events: {
-                submit: validateLoginForm,
+                submit: validateFormSubmit,
             },
         });
     }
