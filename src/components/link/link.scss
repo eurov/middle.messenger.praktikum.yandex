@@ -1,0 +1,12 @@
+.link {
+    background: transparent;
+    color: var(--color-blue);
+    // font-size: 11px;
+    transition: 0.3s color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: var(--color-dark-blue);
+    }
+}
