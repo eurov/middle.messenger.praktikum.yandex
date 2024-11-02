@@ -1,4 +1,4 @@
-<div class="profile__page">
+export default `
     <a href="/chats" class="profile__back-button">
         <div class="profile__back-icon">
             {{!-- <img src="#"/> --}}
@@ -11,7 +11,6 @@
             </label>
             <input type="file" id="change-avatar" name="avatar" />
             <h3 class="profile__name">My profile</h3>
-
             <div class="profile__personal-data">
                 {{#each profileData}}
                 <div class="profile__field">
@@ -26,24 +25,8 @@
                 </div>
                 {{/each}}
             </div>
-
             <div class="profile__controls">
-                {{#if edit}}
-                    {{> button href="/profile" class="profile__save-button button primary" text="Save"}}
-                {{else}}
-                    <div class="profile__field">
-                        {{> button href="/profile/edit" class="profile__controls-link link" text="Edit"}}
-                    </div>
-
-                    <div class="profile__field">
-                        {{> button href="#" class="profile__controls-link" text="Change password"}}
-                    </div>
-
-                    <div class="profile__field">
-                        {{> button href="/login" class="profile__controls-link profile__controls-link_red" text="Log out"}}
-                    </div>
-                {{/if}}
+                {{#if edit}}{{{ button }}}{{/if}}
+                {{{ link }}}
             </div>
-        </form>
-    </div>
-</div>
+        </form>`;
