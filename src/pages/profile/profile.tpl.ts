@@ -1,0 +1,34 @@
+export default `
+    <a href="/chats" class="profile__back-button">
+        <div class="profile__back-icon">
+            {{!-- <img src="#"/> --}}
+        </div>
+    </a>
+    <div class="profile__main-content">
+        <form class="profile__card">
+            <label class="profile__avatar" for="change-avatar">
+                {{!-- <img src="#" /> --}}
+            </label>
+            <input type="file" id="change-avatar" name="avatar" />
+            <h3 class="profile__name">My profile</h3>
+
+            {{#if edit }}
+                {{{ input }}}
+                {{{ button }}}
+            {{else}}
+                <div class="profile__personal-data">
+                    {{#each profileData}}
+                    <div class="profile__field">
+                        <div class="profile__field-caption">{{this.props.key}}</div>
+                        <div class="profile__field-value">
+                                {{this.props.value}}
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="profile__controls">
+                    {{{ link }}}
+                </div>
+            {{/if}}
+
+        </form>`;

@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strictNullChecks": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@temp/*": [
+                "src/temp/*"
+            ]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        ".eslintrc.cjs",
+        "vite.config.js"
+    ]
+}
