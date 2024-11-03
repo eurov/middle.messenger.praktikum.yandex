@@ -6,7 +6,7 @@ type ObjectType = Record<string, any>;
 
 type ElementProps = {
     classes?: string | string[],
-    events?: Record<string, Event>,
+    events?: Record<string, any>,
     children?: Record<string, Block>
 };
 
@@ -54,38 +54,31 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     _createResources(): void {
-        // console.log('_createResources');
         const { tagName } = this._meta;
         this._element = this._createDocumentElement(tagName);
         this._setClassList();
-        this._setAttrs()
+        this._setAttrs();
     }
 
     initChildren(): void { }
 
     init(): void {
-        // console.log('init');
         this._createResources();
         this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
         this.initChildren();
     }
 
     _componentDidMount(): void {
-        // console.log('_componentDidMount');
         this.componentDidMount();
     }
 
     componentDidMount(_oldProps?: ObjectType): void { }
 
     dispatchComponentDidMount(): void {
-        // console.log('dispatchComponentDidMount');
         this.eventBus().emit(Block.EVENTS.FLOW_CDM);
     }
 
     _componentDidUpdate(oldProps: ObjectType, newProps: ObjectType): void {
-        console.log('_componentDidUpdate');
-        console.log(oldProps);
-        console.log(newProps);
         const response = this.componentDidUpdate(oldProps, newProps);
         if (!response) {
             return;
@@ -95,13 +88,10 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     componentDidUpdate(_oldProps: ObjectType, _newProps: ObjectType): boolean {
-        // console.log('componentDidUpdate');
         return true;
     }
 
     setProps = (nextProps: ObjectType): void => {
-        console.log('setProps');
-        console.log(nextProps);
         if (!nextProps) {
             return;
         }
@@ -110,7 +100,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
     };
 
     get element(): HTMLElement {
-        // console.log('element');
         return this._element;
     }
 
@@ -130,19 +119,13 @@ export abstract class Block<Props extends Record<string, any> = any> {
     render(): any { }
 
     compile(template: string, context: ObjectType): DocumentFragment {
-        console.log('compile');
-        // console.log(context);
         const contextAndStubs = { ...context };
         const arraysElementMap = new Map();
         Object.entries(this.children).forEach(([name, child]: [string, any]) => {
-            // console.log(name, child)
-            // console.log(contextAndStubs.children[name]._id);
-            // console.log(Array.isArray(child))
             if (Array.isArray(child)) {
                 const arrayElementsId = UUIDv4();
                 contextAndStubs[name] = `<div data-id="${arrayElementsId}"></div>`;
-                arraysElementMap.set(name, arrayElementsId); Object.entries
-            // } else contextAndStubs[name] = `<div data-id="${contextAndStubs.children[name]._id}"></div>`;
+                arraysElementMap.set(name, arrayElementsId);
             } else contextAndStubs[name] = `<div data-id="${child._id}"></div>`;
         });
         const temp = document.createElement('template');
@@ -151,9 +134,7 @@ export abstract class Block<Props extends Record<string, any> = any> {
             const isElementArray = Array.isArray(child);
             const stub = isElementArray
                 ? temp.content.querySelector(`[data-id="${arraysElementMap.get(name)}"]`)
-                // : temp.content.querySelector(`[data-id="${contextAndStubs.children[name]._id}"]`);
                 : temp.content.querySelector(`[data-id="${child._id}"]`);
-            // console.log(stub)
             if (!stub) return;
             if (isElementArray) {
                 const nodeArray = child.map((childItem) => {
@@ -170,9 +151,7 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     _setEvents(): void {
-        // console.log('_setEvents');
         const { events = {} } = this.props;
-        console.log(events)
         Object.keys((events as ObjectType)).forEach((eventName) => {
             if (eventName === 'blur') {
                 this._element.querySelector('input')?.addEventListener(eventName, events[eventName]);
@@ -183,13 +162,11 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     _setChildren(): void {
-        // console.log('_setChildren');
         const { children = {} } = this.props;
         this.children = children;
     }
 
     _deleteEvents(): void {
-        // console.log('_deleteEvents');
         const { events = {} } = this.props;
         Object.keys((events as ObjectType)).forEach((eventName) => {
             if (eventName === 'blur') {
@@ -201,14 +178,11 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     getContent(): HTMLElement {
-        // console.log('getContent');
         return this.element;
     }
 
     _makePropsProxy(props: Props): Props {
-        // console.log('_makePropsProxy');
-        // Можно и так передать this
-        // Такой способ больше не применяется с приходом ES6+
+        // eslint-disable-next-line @typescript-eslint/no-this-alias
         const self = this;
 
         return new Proxy(props, {
@@ -217,7 +191,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
                 return typeof value === 'function' ? value.bind(target) : value;
             },
             set(target, prop, value) {
-                // eslint-disable-next-line no-param-reassign
                 target[prop as keyof Props] = value;
                 self.eventBus().emit(Block.EVENTS.FLOW_CDU, { ...target }, target);
                 return true;
@@ -229,14 +202,12 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     _createDocumentElement(tagName: string): HTMLElement {
-        // console.log('_createDocumentElement');
         // Можно сделать метод, который через фрагменты в цикле создаёт сразу несколько блоков
         return document.createElement(tagName);
     }
 
     _setClassList(): void {
         const { classes = null } = this.props;
-        // console.log(style);
         if (classes !== null) {
             if (Array.isArray(classes)) {
                 classes.forEach((c) => { this._element.classList.add(c); });
@@ -246,21 +217,18 @@ export abstract class Block<Props extends Record<string, any> = any> {
 
     _setAttrs(): void {
         const { attributes = null } = this.props;
-        console.log(attributes)
         if (attributes !== null) {
             Object.entries(attributes).forEach(([key, value]: [string, any]) => {
-                this._element.setAttribute(key, value.toString())
+                this._element.setAttribute(key, value.toString());
             });
         }
     }
 
     show(): void {
-        // console.log('show');
         this.getContent().style.display = 'block';
     }
 
     hide(): void {
-        // console.log('hide');
         this.getContent().style.display = 'none';
     }
 }
