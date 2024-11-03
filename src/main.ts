@@ -9,7 +9,7 @@ import NotFoundPage from './pages/errors/404/404.js';
 class App {
   private page: HTMLElement;
 
-  private url: string;
+  url: string;
 
   constructor(baseElement: HTMLElement) {
     this.page = baseElement;
@@ -56,10 +56,12 @@ class App {
   }
 }
 
+export let app: App;
+
 document.addEventListener('DOMContentLoaded', () => {
   const baseElement = document.getElementById('app');
   if (baseElement) {
-    const app = new App(baseElement);
+    app = new App(baseElement);
     app.render();
   }
 });
