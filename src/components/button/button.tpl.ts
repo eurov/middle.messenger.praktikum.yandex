@@ -1,6 +1,2 @@
-export const button = `
-{{#if href}}
-<a href="{{href}}" class="{{class}}" type="{{type}}">{{text}}</a>
-{{else}}
-<button class="{{class}}" type="{{type}}">{{text}}</button>
-{{/if}}`;
+export default `
+<span class="button__content">{{text}}</span>`
