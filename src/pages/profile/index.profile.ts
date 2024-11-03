@@ -75,7 +75,7 @@ export default class ProfilePage extends Block {
             },
             events: {
                 blur: (event: any) => {
-                    const validateResult = validateInput(event.target.value, props.rules || []);
+                    const validateResult = validateInput(event.target.value, this.props.rules || []);
                     if (validateResult) {
                         this.setProps({
                             ...this.props,
