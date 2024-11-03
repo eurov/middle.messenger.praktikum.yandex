@@ -1,6 +1,6 @@
 import template from './profile.tpl';
 import { Block } from '@/utils/block';
-import { testProfileData } from "@/temp/fixtures";
+import { testProfileData } from '@/temp/fixtures';
 import Button from '@/components/button/index.button';
 import ProfileInput from '@/components/profileInput/index.profileinput';
 import Link from '@/components/link/index.link';
@@ -38,7 +38,7 @@ const inputProps = [
         name: 'phone',
         placeholder: 'Phone',
         rules: ['phone-valid'],
-    }
+    },
 
 ];
 
@@ -59,11 +59,11 @@ const link = [new Link({
     text: 'Log out',
     href: '/login',
     classes: ['profile__field'],
-})
+}),
 ];
 
 export default class ProfilePage extends Block {
-    constructor({edit = false}) {
+    constructor({ edit = false }) {
         super({
             classes: 'profile__page',
             profileData,

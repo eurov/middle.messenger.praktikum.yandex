@@ -1,5 +1,5 @@
 import template from './ctats.tpl';
-import { testChatsData } from '@/temp/fixtures.js'
+import { testChatsData } from '@/temp/fixtures.js';
 import { Block } from '@/utils/block';
 
 import DialogPanel from '@/components/chat/dialogPanel/index.dialog';
@@ -17,20 +17,20 @@ export default class ChatsPage extends Block {
             events: {
                 click: (event: any) => {
                     document.querySelectorAll('.chat-list-item').forEach(
-                        (item) => item.classList.remove('active')
-                    )
+                        (item) => item.classList.remove('active'),
+                    );
                     const targetItem = event.target.closest('.chat-list-item');
-                    if (targetItem){
-                        targetItem.classList.add('active')
+                    if (targetItem) {
+                        targetItem.classList.add('active');
                         testChatsData.forEach((testItem) => {
                             if (testItem.uuid == targetItem.id) {
                                 this.children.dialogPanel.setProps({
                                     name: testItem.name,
-                                    messages: testItem.messages
+                                    messages: testItem.messages,
                                 });
 
                             }
-                        })
+                        });
                     }
                 }, 
             },

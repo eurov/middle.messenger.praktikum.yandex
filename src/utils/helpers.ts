@@ -17,7 +17,6 @@ const validationRules = new Map<string, any>([
         && 'не должно быть пустым'],
 ]);
 export const validateInput = (value: string, rules: string[]) => {
-    // eslint-disable-next-line no-restricted-syntax
     for (const rule of rules) {
         const validationRuleHandler = validationRules.get(rule);
         if (validationRuleHandler !== undefined) {
@@ -38,9 +37,9 @@ export const validateSignin = (event: SubmitEvent) => {
     if (isValid(event)) {
         window.location.pathname = '/chats';
     }
-}
+};
 export const validateProfile = (event: SubmitEvent) => {
     if (isValid(event)) {
         window.location.pathname = '/profile';
     }
-}
+};

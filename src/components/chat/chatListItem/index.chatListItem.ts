@@ -3,13 +3,13 @@ import { Block } from '@/utils/block';
 
 
 
-export default class chatListItem extends Block {
+export default class ChatListItem extends Block {
     constructor(props, tagName: string = 'li') {
-        const { uuid = null } = props
+        const { uuid = null } = props;
         super({
             ...props,
             classes: 'chat-list-item',
-            attributes: {'id': uuid}
+            attributes: { 'id': uuid },
         }, tagName);
     }
 

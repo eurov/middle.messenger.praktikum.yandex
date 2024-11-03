@@ -10,13 +10,13 @@ const input = [new Input({
     name: 'login',
     placeholder: 'Username',
     rules: ['login-valid'],
-    required: true
+    required: true,
 }), new Input({
     type: 'password',
     name: 'password',
     placeholder: 'Password',
     rules: ['password-valid'],
-    required: true  
+    required: true,  
 })];
 
 const button = [new Button({

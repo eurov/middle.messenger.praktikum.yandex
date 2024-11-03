@@ -9,4 +9,4 @@ export default `
     </div>
     <div class="chat-list-item__time">{{time}}</div>
     <div class="chat-list-item__unread-counter"></div>
-`
+`;
