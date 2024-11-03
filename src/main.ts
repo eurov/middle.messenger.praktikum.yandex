@@ -2,7 +2,7 @@ import LoginPage from './pages/auth/login/index.login';
 import SignupPage from './pages/auth/signup/index.signup';
 import ProfilePage from './pages/profile/index.profile';
 import ChatsPage from './pages/chats/index.chats';
-// import { notFoundPage } from './pages/errors/404/404.js';
+import NotFoundPage from './pages/errors/404/404.js';
 
 
 
@@ -40,14 +40,13 @@ class App {
         this.page.append(new ProfilePage({ edit: false }).element);
         break;
       case '/profile/edit':
-        this.page.append(new ProfilePage({edit: true}).element);
+        this.page.append(new ProfilePage({ edit: true }).element);
         break;
       case '/chats':
-        this.page.append(new ChatsPage().element)
+        this.page.append(new ChatsPage().element);
         break;
       default:
-        // this.page.innerHTML = notFoundPage();
-        console.log('NOT FOUND');
+          this.page.append(new NotFoundPage().element);
     }
     // this.preventReboot();
   }
