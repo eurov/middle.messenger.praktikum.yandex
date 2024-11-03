@@ -1,7 +1,8 @@
+export default `
 <div class="container centered">
     <div class="error-page">
         <div class="error-page__code">{{code}}</div>
         <div class="error-page__message">{{message}}</div>
-        {{> button href="/chats" class="button link" text="Back to chats"}}
+        <a href="/chats" class="button link">Back to chats</a>
     </div>
-</div>
+</div>`;
