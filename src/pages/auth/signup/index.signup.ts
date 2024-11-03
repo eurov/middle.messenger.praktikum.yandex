@@ -2,7 +2,7 @@ import template from './signup.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
-import { validateFormSubmit } from '@/utils/helpers';
+import { validateSignin } from '@/utils/helpers';
 
 
 const inputProps = [
@@ -59,7 +59,7 @@ export default class SignupPage extends Block {
         super({
             classes: ['container', 'centered'],
             events: {
-                submit: validateFormSubmit,
+                submit: validateSignin,
             },
             children: {
                 input: inputProps.map((props) => new Input({ ...props })),

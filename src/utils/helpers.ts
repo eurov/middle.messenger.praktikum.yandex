@@ -1,5 +1,3 @@
-import Input from "@/components/input/index.input";
-
 const validationRules = new Map<string, any>([
     ['name-valid', (value: string) => !/^[А-ЯA-ZЁ][а-яёA-Za-z-]*$/g.test(value) && `латиница или кириллица,
 первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис).`],
@@ -30,11 +28,19 @@ export const validateInput = (value: string, rules: string[]) => {
     return false;
 };
 
-export const validateFormSubmit = (event: SubmitEvent) => {
+const isValid = (event: SubmitEvent) => {
     event.preventDefault();
     const formInputs = (event.target as Element).querySelectorAll('input');
-    const isValid = Array.from(formInputs).every(input => !input.classList.contains('invalid'));
-    if (isValid) {
-        window.location.pathname = '\chats';
-    }
+    return Array.from(formInputs).every(input => !input.classList.contains('invalid'));
 };
+
+export const validateSignin = (event: SubmitEvent) => {
+    if (isValid(event)) {
+        window.location.pathname = '/chats';
+    }
+}
+export const validateProfile = (event: SubmitEvent) => {
+    if (isValid(event)) {
+        window.location.pathname = '/profile';
+    }
+}

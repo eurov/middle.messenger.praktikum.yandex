@@ -5,7 +5,7 @@ import Button from '@/components/button/index.button';
 import ProfileInput from '@/components/profileInput/index.profileinput';
 import Link from '@/components/link/index.link';
 import { validateInput } from '@/utils/helpers';
-import { validateFormSubmit } from '@/utils/helpers';
+import { validateProfile } from '@/utils/helpers';
 
 
 const inputProps = [
@@ -91,7 +91,7 @@ export default class ProfilePage extends Block {
                     }
                 },
                 
-                submit: validateFormSubmit,
+                submit: validateProfile,
                 
             },
         });
