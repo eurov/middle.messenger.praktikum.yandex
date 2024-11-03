@@ -8,6 +8,7 @@ type ElementProps = {
     classes?: string | string[],
     events?: Record<string, any>,
     children?: Record<string, Block>
+    attributes?: Record<string, string>
 };
 
 export abstract class Block<Props extends Record<string, any> = any> {

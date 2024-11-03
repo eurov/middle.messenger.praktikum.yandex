@@ -1,8 +1,14 @@
 import template from './link.tpl';
 import { Block } from '@utils/block';
 
-export default class Link extends Block {
-    constructor(props) {
+
+
+interface ILink {
+    href: string,
+    text: string
+}
+export default class Link extends Block<ILink> {
+    constructor(props: ILink) {
         super({
             ...props,
         });

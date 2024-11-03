@@ -2,10 +2,19 @@ import template from './chatListItem.tpl';
 import { Block } from '@/utils/block';
 
 
-
-export default class ChatListItem extends Block {
-    constructor(props, tagName: string = 'li') {
-        const { uuid = null } = props;
+interface IChatListItem {
+    uuid: string,
+    name: string,
+    massages?: ({
+        senderIsYou: boolean;
+        time: string;
+        text: string;
+        unread?: boolean;
+    })
+}
+export default class ChatListItem extends Block<IChatListItem> {
+    constructor(props: IChatListItem, tagName: string = 'li') {
+        const { uuid } = props;
         super({
             ...props,
             classes: 'chat-list-item',
