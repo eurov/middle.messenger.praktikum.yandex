@@ -1,3 +1,6 @@
+import { app } from '@/main';
+
+
 const validationRules = new Map<string, any>([
     ['name-valid', (value: string) => !/^[А-ЯA-ZЁ][а-яёA-Za-z-]*$/g.test(value) && `латиница или кириллица,
 первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис).`],
@@ -35,11 +38,13 @@ const isValid = (event: SubmitEvent) => {
 
 export const validateSignin = (event: SubmitEvent) => {
     if (isValid(event)) {
-        window.location.pathname = '/chats';
+        app.url = '/chats';
+        app.render();
     }
 };
 export const validateProfile = (event: SubmitEvent) => {
     if (isValid(event)) {
-        window.location.pathname = '/profile';
+        app.url = '/profile';
+        app.render();
     }
 };
