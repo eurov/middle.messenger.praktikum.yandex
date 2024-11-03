@@ -1,4 +1,4 @@
-import Input from "@/components/formInput/index.input";
+import Input from "@/components/input/index.input";
 
 const validationRules = new Map<string, any>([
     ['name-valid', (value: string) => !/^[А-ЯA-ZЁ][а-яёA-Za-z-]*$/g.test(value) && `латиница или кириллица,

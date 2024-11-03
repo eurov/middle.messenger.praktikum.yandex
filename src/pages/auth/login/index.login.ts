@@ -1,6 +1,6 @@
 import template from './login.tpl';
 import { Block } from '@utils/block';
-import Input from '@/components/formInput/index.input';
+import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
 import { validateFormSubmit } from '@/utils/helpers';
 
