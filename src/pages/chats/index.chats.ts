@@ -12,7 +12,7 @@ export default class ChatsPage extends Block {
             classes: 'chat__container',
             children: {
                 sideBarPanel: new SideBarPanel(),
-                dialogPanel: new DialogPanel({ messages: []}),
+                dialogPanel: new DialogPanel({ messages: [] }),
             },
             events: {
                 click: (event: any) => {

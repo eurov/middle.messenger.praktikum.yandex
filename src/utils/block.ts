@@ -47,7 +47,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     _registerEvents(eventBus: EventBus): void {
-        console.log('_registerEvents');
         eventBus.on(Block.EVENTS.INIT, this.init.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
         eventBus.on(Block.EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
@@ -105,7 +104,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
     }
 
     _render(): void {
-        console.log('_render');
         const block = this.render();
         // Этот небезопасный метод для упрощения логики
         // Используйте шаблонизатор из npm или напишите свой безопасный
@@ -182,7 +180,7 @@ export abstract class Block<Props extends Record<string, any> = any> {
         return this.element;
     }
 
-    _makePropsProxy(props: Props): Props {
+    _makePropsProxy(props: Props) {
         // eslint-disable-next-line @typescript-eslint/no-this-alias
         const self = this;
 

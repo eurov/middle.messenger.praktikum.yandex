@@ -11,8 +11,8 @@ class App {
 
   private url: string;
 
-  constructor() {
-    this.page = document.getElementById('app');
+  constructor(baseElement: HTMLElement) {
+    this.page = baseElement;
     this.url = window.location.pathname;
   }
 
@@ -21,8 +21,11 @@ class App {
     for (const link of pageLinks) {
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        this.url = (e.target as Element).attributes.href.textContent;
-        this.render();
+        const nextPage = (e.target as Element).getAttribute('href');
+        if (nextPage) {
+          this.url = nextPage;
+          this.render();
+        }
       });
     }
   }
@@ -54,7 +57,10 @@ class App {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  const app = new App();
-  app.render();
+  const baseElement = document.getElementById('app');
+  if (baseElement) {
+    const app = new App(baseElement);
+    app.render();
+  }
 });
 
