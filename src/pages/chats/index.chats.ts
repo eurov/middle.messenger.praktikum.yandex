@@ -1,5 +1,5 @@
 import template from './ctats.tpl';
-import { testChatsData } from '../../temp/fixtures.js'
+import { testChatsData } from '@/temp/fixtures.js'
 import { Block } from '@/utils/block';
 
 import DialogPanel from '@/components/chat/dialogPanel/index.dialog';
@@ -12,7 +12,7 @@ export default class ChatsPage extends Block {
             classes: 'chat__container',
             children: {
                 sideBarPanel: new SideBarPanel(),
-                dialogPanel: new DialogPanel({ name: 'Test' }),
+                dialogPanel: new DialogPanel(),
             },
             events: {
                 click: (event: any) => {
@@ -22,10 +22,15 @@ export default class ChatsPage extends Block {
                     const targetItem = event.target.closest('.chat-list-item');
                     if (targetItem){
                         targetItem.classList.add('active')
-                        this.children.dialogPanel.setProps({
-                            name: "Another name"
-                        });
-                    } else {
+                        testChatsData.forEach((testItem) => {
+                            if (testItem.uuid == targetItem.id) {
+                                this.children.dialogPanel.setProps({
+                                    name: testItem.name,
+                                    messages: testItem.messages
+                                });
+
+                            }
+                        })
                     }
                 }, 
             },
