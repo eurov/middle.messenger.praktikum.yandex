@@ -11,22 +11,24 @@ export default `
             </label>
             <input type="file" id="change-avatar" name="avatar" />
             <h3 class="profile__name">My profile</h3>
-            <div class="profile__personal-data">
-                {{#each profileData}}
-                <div class="profile__field">
-                    <div class="profile__field-caption">{{this.kwargs.key}}</div>
-                    <div class="profile__field-value">
-                        {{#if../edit }}
-                            <input type="text" class="profile__field-input" name={{this.name}} placeholder="{{this.kwargs.value}}">
-                        {{else}}
-                            {{this.kwargs.value}}
-                        {{/if}}
+
+            {{#if edit }}
+                {{{ input }}}
+                {{{ button }}}
+            {{else}}
+                <div class="profile__personal-data">
+                    {{#each profileData}}
+                    <div class="profile__field">
+                        <div class="profile__field-caption">{{this.props.key}}</div>
+                        <div class="profile__field-value">
+                                {{this.props.value}}
+                        </div>
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
-            </div>
-            <div class="profile__controls">
-                {{#if edit}}{{{ button }}}{{/if}}
-                {{{ link }}}
-            </div>
+                <div class="profile__controls">
+                    {{{ link }}}
+                </div>
+            {{/if}}
+
         </form>`;
