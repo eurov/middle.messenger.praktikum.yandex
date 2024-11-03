@@ -28,6 +28,7 @@ class App {
   }
 
   public render() {
+    this.page.innerHTML = '';
     switch (this.url) {
       case '/':
       case '/login':
@@ -48,7 +49,7 @@ class App {
       default:
           this.page.append(new NotFoundPage().element);
     }
-    // this.preventReboot();
+    this.preventReboot();
   }
 }
 
