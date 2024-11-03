@@ -4,6 +4,7 @@
         "module": "ESNext",
         "sourceMap": true,
         "noImplicitAny": true,
+        "noUnusedLocals": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "baseUrl": ".",
