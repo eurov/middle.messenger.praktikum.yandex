@@ -1,21 +1,20 @@
-@import "variables";
+@import url("variables.scss");
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('../components/button/button.scss');
-@import url('../components/formInput/formInput.scss');
-
-
+@import url('../components/link/link.scss');
+@import url('../components/input/input.scss');
+@import url('../components/chat/sidebar/sidebar.scss');
+@import url('../components/chat/dialogPanel/dialog.scss');
 @import url('../pages/auth/auth.scss');
 @import url('../pages/profile/profile.scss');
 @import url('../pages/chats/chats.scss');
-@import url('../pages/chats/sidebarPanel/sidebar.scss');
-@import url('../pages/chats/dialogPanel/dialog.scss');
 @import url('../pages/errors/404/404.scss');
 
 
 
 * {
-  font: 500 13px/13px 'Inter', sans-serif;
   box-sizing: border-box;
+  font: 500 13px/13px Inter, sans-serif;
 }
 
 body {
@@ -23,9 +22,9 @@ body {
 }
 
 h3 {
+  color: var(--color-black);
   font-size: 20px;
   font-weight: 500;
-  color: var(--color-black);
 }
 
 form {
@@ -36,20 +35,21 @@ input {
   display: block;
   width: 100%;
 }
+
 .container {
   display: flex;
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
   
   &.centered {
-    justify-content: center;
     align-items: center;
+    justify-content: center;
   }
 }
 
 .card {
   background: var(--color-white);
-  box-shadow: 0 0 6px var(--color-shadow);
   border-radius: 12px;
+  box-shadow: 0 0 6px var(--color-shadow);
   padding: 30px;
 }

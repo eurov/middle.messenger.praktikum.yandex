@@ -1,5 +1,6 @@
 .chat {
     color: var(--color-bg-gray);
+
     &__main-screen {
         flex-grow: 1;
     }
@@ -10,15 +11,15 @@
     }
 
     &__chats-sidebar {
-        width: 310px;
         background: #FBFBFB;
         border-right: 1px solid #EAEAEA;
+        width: 310px;
     }
 
     &__profile-link {
         color: var(--color-text-gray);
-        font-size: 12px;
         display: block;
+        font-size: 12px;
         padding: 21px 10px;
         text-align: right;
         text-decoration: none;
@@ -30,21 +31,21 @@
     }
 
     &__search {
-        border: none;
-        outline: none;
         background: #EFEFEF;
+        border: none;
         border-radius: 5px;
-        text-align: center;
-        font-size: 12px;
-        padding: 10px;
-        margin: 0 10px;
         display: block;
+        font-size: 12px;
+        margin: 0 10px;
+        outline: none;
+        padding: 10px;
+        text-align: center;
         width: calc(100% - 20px);
 
         &:focus,
         &.not-empty {
-            text-align: left;
             padding-left: 34px;
+            text-align: left;
 
             &+img {
                 left: 20px;
@@ -59,17 +60,17 @@
             position: relative;
 
             img {
+                left: calc(50% - 38px);
                 position: absolute;
                 top: 10px;
-                left: calc(50% - 38px);
             }
         }
     }
 
     &__chats-list {
         list-style: none;
-        padding: 0;
         margin: 14px 0 0;
+        padding: 0;
     }
 
     &__empty-message {
