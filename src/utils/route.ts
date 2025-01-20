@@ -1,4 +1,4 @@
-class Route {
+export class Route {
     _pathname: string;
 
     _blockClass: any;
