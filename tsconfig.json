@@ -22,7 +22,10 @@
             ],
             "@temp/*": [
                 "src/temp/*"
-            ]
+            ],
+            "@controllers/*": [
+                "src/controllers/*"
+            ],
         }
     },
     "include": [
