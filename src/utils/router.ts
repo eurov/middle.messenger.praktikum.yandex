@@ -1,17 +1,16 @@
 import { Route } from './route';
 
-class Router {
+export class Router {
     routes: Route[];
 
     history: History;
 
     _currentRoute: Route | null;
 
-    _rootQuery;
+    _rootQuery: string = 'app';
 
-    __instance?: Router
+    __instance?: Router;
 
-    
     constructor(rootQuery?: string) {
         if (this.__instance) {
             return this.__instance;
@@ -20,8 +19,7 @@ class Router {
         this.routes = [];
         this.history = window.history;
         this._currentRoute = null;
-        this._rootQuery = rootQuery;
-
+        if (rootQuery) this._rootQuery = rootQuery;
         this.__instance = this;
     }
 
@@ -32,25 +30,22 @@ class Router {
     }
 
     start() {
-        window.onpopstate = (event: Event) => {
+        window.onpopstate = (event: any) => {
             this._onRoute(event.currentTarget?.location.pathname);
         };
-
-        this._onRoute(window.location.pathname)
+        this._onRoute(window.location.pathname);
     }
 
     _onRoute(pathname: string) {
         const route = this.getRoute(pathname);
-        if (!route) {
-            return;
-        }
-
-        if (this._currentRoute) {
+        if (route && this._currentRoute) {
             this._currentRoute.leave();
         }
 
-        this._currentRoute = route;
-        route.render(route, pathname);
+        if (route) {
+            this._currentRoute = route;
+            route.render();
+        }
     }
 
     go(pathname: string) {
@@ -67,9 +62,8 @@ class Router {
     }
 
     getRoute(pathname: string) {
-        return this.routes.find(route => route.match(pathname));
+        return this.routes.find((route) => route.match(pathname));
     }
 }
-
 
 export const router = new Router();
