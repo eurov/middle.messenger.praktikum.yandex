@@ -2,13 +2,13 @@ import template from './login.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
-import { validateSignin } from '@/utils/helpers';
+// import { validateSignin } from '@/utils/helpers';
 
 
 
 const input = [new Input({
     name: 'login',
-    placeholder: 'Username',
+    placeholder: 'Login',
     rules: ['login-valid'],
     required: true,
 }), new Input({
@@ -35,7 +35,7 @@ export default class LoginPage extends Block {
                 button,
             },
             events: {
-                submit: validateSignin,
+                // submit: validateSignin,
             },
         });
     }

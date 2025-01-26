@@ -6,7 +6,7 @@ export default `
         </div>
         <div class="buttons">
                 {{{ button }}}
-            <a class="button link" href="/signup">
+            <a class="button link" href="/sign-up">
                 Create account
             </a>
         </div>

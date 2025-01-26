@@ -22,12 +22,12 @@ const inputProps = [
     {
         name: 'login',
         placeholder: 'Login',
-        rules: ['username-valid'],
+        rules: ['login-valid'],
     },
     {
         name: 'display_name',
         placeholder: 'Chat name',
-        rules: ['username-valid'],
+        rules: ['login-valid'],
     },
     {
         name: 'email',
