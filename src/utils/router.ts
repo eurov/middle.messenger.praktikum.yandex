@@ -7,19 +7,18 @@ export class Router {
 
     _currentRoute: Route | null;
 
-    _rootQuery: string = 'app';
+    _rootQuery: string;
 
     __instance?: Router;
 
-    constructor(rootQuery?: string) {
+    constructor(rootQuery: string = 'app') {
         if (this.__instance) {
             return this.__instance;
         }
-
         this.routes = [];
         this.history = window.history;
         this._currentRoute = null;
-        if (rootQuery) this._rootQuery = rootQuery;
+        this._rootQuery = rootQuery;
         this.__instance = this;
     }
 
