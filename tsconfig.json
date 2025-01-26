@@ -26,6 +26,9 @@
             "@controllers/*": [
                 "src/controllers/*"
             ],
+            "@api/*": [
+                "src/api/*"
+            ],
         }
     },
     "include": [
