@@ -28,13 +28,16 @@ export class Route {
     }
 
     match(pathname: string) {
-        return isEqual(pathname, this._pathname);
+        return pathname === this._pathname;
     }
 
     render() {
         if (!this._block) {
             this._block = new this._blockClass();
-            render(this._props.rootQuery, this._block);
+            const root = document.getElementById(this._props.rootQuery)
+            if (root) {
+                root.append(this._block.getContent());
+            }
             return;
         }
 
