@@ -32,10 +32,12 @@ class AuthApi extends BaseApi {
     }
 
     signup(data: ISignupData) {
+        console.log(data)
         return this.http.post('/signup', data);
     }
 
     signin(data: ISigninData) {
+        console.log(data)
         return this.http.post('/signin', data);
     }
 
