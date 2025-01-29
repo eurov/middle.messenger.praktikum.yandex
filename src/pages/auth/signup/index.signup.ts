@@ -2,9 +2,9 @@ import template from './signup.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
-// import { validateSignin } from '@/utils/helpers';
-import { getFormData } from '@/utils/getFormData';
+import { getFormData } from '@/utils/helpers';
 import { AuthController } from '@controllers/authController'
+import { ISignupData } from '@/api/authApi'
 
 
 const inputProps = [
@@ -56,13 +56,10 @@ const button = [new Button({
     classes: ['button', 'primary'],
 })];
 
+
 function onSubmit(event: SubmitEvent) {
-    try {
-        const data = getFormData(event);
-        AuthController.signup(data);
-    } catch (e) {
-        if (e instanceof Error && 'reason' in e) console.error(e.reason);
-    }
+    const data = getFormData(event);
+    AuthController.signup(data as ISignupData);
 }
 
 export default class SignupPage extends Block {
@@ -71,7 +68,6 @@ export default class SignupPage extends Block {
             classes: ['container', 'centered'],
             events: {
                 submit: onSubmit,
-                // submit: validateSignin,
             },
             children: {
                 input: inputProps.map((props) => new Input({ ...props })),
