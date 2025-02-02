@@ -1,34 +1,65 @@
 export default `
-    <a href="/chats" class="profile__back-button">
+    <a href="/messenger" class="profile__back-button">
         <div class="profile__back-icon">
             {{!-- <img src="#"/> --}}
         </div>
     </a>
     <div class="profile__main-content">
-        <form class="profile__card">
+        <div class="profile__card">
+
             <label class="profile__avatar" for="change-avatar">
                 {{!-- <img src="#" /> --}}
             </label>
+
             <input type="file" id="change-avatar" name="avatar" />
-            <h3 class="profile__name">My profile</h3>
+            <h3 class="profile__name">{{first_name}} {{second_name}}</h3>
 
-            {{#if edit }}
-                {{{ input }}}
-                {{{ button }}}
-            {{else}}
-                <div class="profile__personal-data">
-                    {{#each profileData}}
-                    <div class="profile__field">
-                        <div class="profile__field-caption">{{this.props.key}}</div>
-                        <div class="profile__field-value">
-                                {{this.props.value}}
-                        </div>
+
+            <div class="profile__personal-data">
+
+                <div class="profile__field">
+                    <div class="profile__field-caption">First name</div>
+                    <div class="profile__field-value">
+                        {{first_name}}
                     </div>
-                    {{/each}}
                 </div>
-                <div class="profile__controls">
-                    {{{ link }}}
+                <div class="profile__field">
+                    <div class="profile__field-caption">Second name</div>
+                    <div class="profile__field-value">
+                        {{second_name}}
+                    </div>
                 </div>
-            {{/if}}
+                <div class="profile__field">
+                    <div class="profile__field-caption">Login</div>
+                    <div class="profile__field-value">
+                        {{login}}
+                    </div>
+                </div>
+                <div class="profile__field">
+                    <div class="profile__field-caption">Display name</div>
+                    <div class="profile__field-value">
+                        {{display_name}}
+                    </div>
+                </div>
+                <div class="profile__field">
+                    <div class="profile__field-caption">Email</div>
+                    <div class="profile__field-value">
+                        {{email}}
+                    </div>
+                </div>
+                <div class="profile__field">
+                    <div class="profile__field-caption">Phone</div>
+                    <div class="profile__field-value">
+                        {{phone}}
+                    </div>
+                </div>
 
-        </form>`;
+            </div>
+            <div class="profile__controls">
+                {{{ changeDataButton }}}
+                {{{ changePasswordButton }}}
+                {{{ logoutButton }}}
+            </div>
+
+        </div>
+    </div>`;
