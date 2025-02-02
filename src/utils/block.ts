@@ -4,7 +4,7 @@ import EventBus from './eventBus';
 
 type ObjectType = Record<string, any>;
 
-type ElementProps = {
+export type ElementProps = {
     classes?: string | string[],
     events?: Record<string, any>,
     children?: Record<string, Block>
