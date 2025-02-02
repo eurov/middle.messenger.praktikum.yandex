@@ -6,7 +6,6 @@ import { Block, ElementProps } from '@utils/block';
 interface ILink {
     href?: string,
     text?: string
-    // isExit?: boolean
 }
 export default class Link extends Block<ILink> {
     constructor(props: ILink & ElementProps) {
