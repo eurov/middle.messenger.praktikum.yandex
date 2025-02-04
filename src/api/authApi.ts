@@ -1,7 +1,7 @@
 import { BaseApi } from '@/api/utils/baseApi';
 
 
-export interface ISignupData {
+export interface ISignupData extends Record<string, string> {
     first_name: string,
     second_name: string,
     login: string,
@@ -10,7 +10,7 @@ export interface ISignupData {
     phone: string
 }
 
-export interface ISigninData {
+export interface ISigninData extends Record<string, string> {
     login: string,
     password: string
 }
@@ -32,15 +32,13 @@ class AuthApi extends BaseApi {
     }
 
     signup(data: ISignupData) {
-        console.log(data)
         return this.http.post('/signup', data);
     }
-
+    
     signin(data: ISigninData) {
-        console.log(data)
         return this.http.post('/signin', data);
     }
-
+    
     logout() {
         return this.http.post('/logout');
     }
