@@ -2,7 +2,7 @@ export default `
     <a href="/messenger" class="profile__back-button">
         <div class="profile__back-icon">
             {{!-- <img src="#"/> --}}
-        </div>
+    </div>
     </a>
     <div class="profile__main-content">
         <div class="profile__card">
