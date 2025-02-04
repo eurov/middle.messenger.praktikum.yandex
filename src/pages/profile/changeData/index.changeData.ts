@@ -26,37 +26,36 @@ class ChangeDataBlock extends Block {
         const inputProps = [
             {
                 name: 'first_name',
-                placeholder: 'First name',
+                caption: 'First name',
                 value: props.user.first_name,
                 rules: ['name-valid'],
             },
             {
                 name: 'second_name',
-                placeholder: 'Enter second name',
+                caption: 'Enter second name',
                 value: props.user.second_name,
                 rules: ['name-valid'],
             },
             {
                 name: 'login',
-                placeholder: 'Login',
+                caption: 'Login',
                 value: props.user.login,
                 rules: ['login-valid'],
             },
             {
                 name: 'email',
-                placeholder: 'Email',
+                caption: 'Email',
                 value: props.user.email,
                 rules: ['email-valid'],
             },
             {
                 name: 'display_name',
-                placeholder: 'Chat name',   
+                caption: 'Chat name',   
                 value: props.user.display_name,
             },
             {
                 name: 'phone',
-                required: true,
-                placeholder: 'Phone',
+                caption: 'Phone',
                 value: props.user.phone,
                 rules: ['phone-valid'],
             },

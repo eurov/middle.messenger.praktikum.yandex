@@ -6,32 +6,27 @@ import { getFormData } from '@utils/helpers';
 import { withStore } from '@utils/store';
 import { IState } from '@utils/store';
 import { UserController } from '@/controllers/userController';
-import { Routes } from '@/main';
-import { router } from '@/utils/router';
 import { IChangePassword } from '@/api/userApi';
 
-const type = 'password';
 const InputProps = [{
     name: 'oldPassword',
-    required: true,
-    placeholder: 'Old Password',
-    type,
+    placeholder: '_',
+    caption: 'Old Password',
+    type: 'password',
     rules: ['password-valid'],
 },
 {
     name: 'newPassword',
-    required: true,
-    placeholder: 'New password',
-    type,
-    label: 'Новый пароль',
+    placeholder: '_',
+    caption: 'New password',
+    type: 'password',
     rules: ['password-valid'],
 },
 {
-    name: 'newPassword',
-    required: true,
-    placeholder: 'Repeat new password',
-    type,
-    label: 'Повторите новый пароль',
+    name: 'repeatPassword',
+    placeholder: '_',
+    caption: 'Repeat password',
+    type: 'password',
     rules: ['password-valid'],
 },
 ];
@@ -39,10 +34,12 @@ const InputProps = [{
 function onSubmit(event: SubmitEvent) {
     try {
         const data = getFormData(event);
+        if (data.newPassword !== data.repeatPassword) {
+            alert("The passwords you entered don't match.");
+        }
         UserController.changePassword(data as unknown as IChangePassword);
-        router.go(Routes.Profile);
     } catch (e) {
-        if (e instanceof Error && 'reason' in e) console.error(e.reason);
+        console.error(e)
     }
 }
 
