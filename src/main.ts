@@ -1,5 +1,6 @@
 import { router } from '@/utils/router';
 import { AuthController } from '@controllers/authController';
+import '@components/partials.js'
 import LoginPage from '@/pages/auth/login/index.login';
 import SignupPage from '@/pages/auth/signup/index.signup';
 import ChatsPage from '@/pages/chats/index.chats';
