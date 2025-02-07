@@ -11,7 +11,7 @@ export enum StoreEvents {
     UPDATE = 'Updated',
 }
 
-export enum PopupTypes {
+export enum ModalTypes {
     CREATE_CHAT = 'createChat',
     ADD_USER = 'addUser',
     DELETE_USER = 'deleteUser',
@@ -20,7 +20,7 @@ export enum PopupTypes {
 export interface IState {
     user?: IUser,
     chats: IChat[],
-    popup: undefined | PopupTypes,
+    modal: undefined | ModalTypes,
     currentChat: number | undefined,
     messages: Record<number, Message[]>,
     users: IChatUser[],
@@ -30,7 +30,7 @@ export interface IState {
 class Store extends EventBus {
     private state: IState = {
         chats: [],
-        popup: undefined,
+        modal: undefined,
         currentChat: undefined,
         messages: {},
         users: [],
