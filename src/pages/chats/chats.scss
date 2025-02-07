@@ -16,20 +16,6 @@
         width: 310px;
     }
 
-    &__profile-link {
-        color: var(--color-text-gray);
-        display: block;
-        font-size: 12px;
-        padding: 21px 10px;
-        text-align: right;
-        text-decoration: none;
-
-        img {
-            position: relative;
-            top: 1px;
-        }
-    }
-
     &__search {
         background: #EFEFEF;
         border: none;
