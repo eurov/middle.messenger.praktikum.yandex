@@ -1,16 +1,36 @@
 import template from './sidebar.tpl';
 import { Block } from '@/utils/block';
 import ChatItem from '@/components/chat/chatListItem/index.chatListItem';
-import { testChatsData } from '@/temp/fixtures';
+import Link from '@/components/link/index.link';
+import { ModalController } from '@controllers/modalController';
+import { ModalTypes } from '@/utils/store';
+import { Modal } from '@/components/modal/index.modal';
+
+
+const onClick = () => {
+    ModalController.open(ModalTypes.CREATE_CHAT);
+};
 
 
 export default class SideBarPanel extends Block {
-    constructor() {
+    constructor(props: any) {
         super({
             classes: 'chat__chats-sidebar',
             children: {
-                chatItems: testChatsData.map((chatProps) => new ChatItem(chatProps)),
-
+                newChatButton: new Link({
+                    text: 'New chat',
+                    // classes: 'new-chat',
+                    events: {
+                        click: onClick,
+                    },
+                }),
+                profileLink: new Link({
+                    text: 'Profile',
+                    href: '/profile',
+                    // classes: 'profile-link',
+                }),
+                chatItems: new ChatItem({ ...props }),
+                popup: new Modal({}),
             },
         });
     }
