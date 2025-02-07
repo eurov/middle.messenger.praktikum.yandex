@@ -1,90 +1,104 @@
-.chat-list-item {
-    cursor: pointer;
-    display: grid;
-    gap: 4px 10px;
-    grid-template:
-        "avatar name time" auto
-        "avatar message ." auto
-        "avatar message counter" auto / 50px 1fr 50px;
-    margin-bottom: 4px;
-    margin-top: 2px;
-    padding: 10px;
-    position: relative;
+.chat-list {
+    &-item {
+        cursor: pointer;
+        display: grid;
+        gap: 4px 10px;
+        grid-template:
+            "avatar name time" auto
+            "avatar message ." auto
+            "avatar message counter" auto / 50px 1fr 50px;
+        margin-bottom: 4px;
+        margin-top: 2px;
+        padding: 10px;
+        position: relative;
 
-    &::before,
-    &:last-child::after {
-        background: #EAEAEA;
-        content: "";
-        height: 1px;
-        left: 10px;
-        position: absolute;
-        right: 10px;
-        top: -2px;
-    }
+        &::before,
+        &:last-child::after {
+            background: #EAEAEA;
+            content: "";
+            height: 1px;
+            left: 10px;
+            position: absolute;
+            right: 10px;
+            top: -2px;
+        }
 
-    &:last-child {
-        margin-bottom: 2px;
+        &:last-child {
+            margin-bottom: 2px;
 
-        &::after {
-            bottom: -2px;
-            top: auto;
+            &::after {
+                bottom: -2px;
+                top: auto;
+            }
+        }
+
+        &.active {
+            background: #E4EDFD;
+        }
+
+        &__unread-counter {
+            align-items: center;
+            background: var(--color-blue);
+            border-radius: 50%;
+            color: var(--color-white);
+            display: flex;
+            font-size: 11px;
+            grid-area: counter;
+            height: 20px;
+            justify-content: center;
+            justify-self: end;
+            line-height: 12px;
+            width: 20px;
+        }
+
+        &__time {
+            color: var(--color-text-gray);
+            font-size: 9px;
+            grid-area: time;
+            justify-self: end;
+            line-height: 13px;  
+        }
+
+        &__name {
+            color: var(--color-black);
+            font-size: 13px;
+            font-weight: 600;
+            grid-area: name;
+        }
+
+        &__message {
+            -webkit-box-orient: vertical;
+            color: var(--color-text-gray);
+            display: -webkit-box;
+            font-size: 12px;
+            grid-area: message;
+            line-height: 15px;
+            overflow: hidden;
+        }
+
+        &__avatar {
+            background: #EFEFEF;
+            border-radius: 50%;
+            grid-area: avatar;
+            height: 47px;
+            width: 47px;
+        }
+
+        &__mine-mark {
+            color: var(--color-black);
+            font-size: 12px;
         }
     }
-
-    &.active {
-        background: #E4EDFD;
-    }
-
-    &__unread-counter {
-        align-items: center;
-        background: var(--color-blue);
-        border-radius: 50%;
-        color: var(--color-white);
+    &-header {
         display: flex;
-        font-size: 11px;
-        grid-area: counter;
-        height: 20px;
-        justify-content: center;
-        justify-self: end;
-        line-height: 12px;
-        width: 20px;
-    }
+        flex-direction: column;
 
-    &__time {
-        color: var(--color-text-gray);
-        font-size: 9px;
-        grid-area: time;
-        justify-self: end;
-        line-height: 13px;  
-    }
-
-    &__name {
-        color: var(--color-black);
-        font-size: 13px;
-        font-weight: 600;
-        grid-area: name;
-    }
-
-    &__message {
-        -webkit-box-orient: vertical;
-        color: var(--color-text-gray);
-        display: -webkit-box;
-        font-size: 12px;
-        grid-area: message;
-        line-height: 15px;
-        overflow: hidden;
-    }
-
-    &__avatar {
-        background: #EFEFEF;
-        border-radius: 50%;
-        grid-area: avatar;
-        height: 47px;
-        width: 47px;
-    }
-
-    &__mine-mark {
-        color: var(--color-black);
-        font-size: 12px;
+        .actions-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            padding: 21px 10px;
+        }
     }
 }
