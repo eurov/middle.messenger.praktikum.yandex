@@ -13,10 +13,9 @@ export default `
     </div>
 </header>
 
-<ul class="chat__chats-list">
-    {{{chatItems}}}
-    {{{modal}}}
-</ul>`;
+{{{chatItems}}}
+{{{modal}}}
+`;
 
 
 
