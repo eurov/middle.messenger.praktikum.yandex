@@ -101,22 +101,23 @@
   &__controls {
     margin-top: 40px;
 
-    &-link {
-      color: var(--color-blue);
-      text-decoration: none;
+    // &-link {
+    //   color: var(--color-blue);
+    //   // color: var(--color-blue);
+    //   text-decoration: none;
 
-      &:hover {
-        color: var(--color-dark-blue);
-      }
+    //   &:hover {
+    //     color: var(--color-dark-blue);
+    //   }
 
-      &_red {
-        color: var(--color-red);
+    //   &_red {
+    //     color: var(--color-red);
 
-        &:hover {
-          color: var(--color-dark-red);
-        }
-      }
-    }
+    //     &:hover {
+    //       color: var(--color-dark-red);
+    //     }
+    //   }
+    // }
   }
 
   &__save-button {
