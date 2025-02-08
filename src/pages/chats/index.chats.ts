@@ -18,7 +18,6 @@ export default class ChatsPage extends Block {
     }
 
     componentDidMount(_oldProps?: { [x: string]: any; } | undefined): void {
-        console.log('DID MOUNT')
         ChatController.getChats();
     }
 
