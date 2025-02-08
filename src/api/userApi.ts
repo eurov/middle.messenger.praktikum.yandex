@@ -1,4 +1,4 @@
-import { BaseApi } from './utils/baseApi';
+import { BaseApi } from './baseApi';
 import { IUser } from './authApi';
 
 export interface IChangePassword {
