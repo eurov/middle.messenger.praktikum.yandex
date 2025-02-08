@@ -1,6 +1,6 @@
 import template from './sidebar.tpl';
 import { Block } from '@/utils/block';
-import ChatItem from '@/components/chat/chatListItem/index.chatListItem';
+import { ChatItem } from '@/components/chat/chatListItem/index.chatListItem';
 import Link from '@/components/link/index.link';
 import { ModalController } from '@controllers/modalController';
 import { ModalTypes } from '@/utils/store';

@@ -11,7 +11,7 @@ const getChatId = (element: EventTarget | null): string | null => {
     return chatId || getChatId((element as HTMLElement).parentElement);
 };
 
-class ChatItem extends Block {
+class ChatItemBlock extends Block {
     constructor(props: ElementProps) {
         super({
             ...props,
@@ -36,4 +36,4 @@ const mapStateToProps = (state: IState) => {
     };
 };
 
-export const ChatItemWithStore = withStore(mapStateToProps)(ChatItem);
+export const ChatItem = withStore(mapStateToProps)(ChatItemBlock);
