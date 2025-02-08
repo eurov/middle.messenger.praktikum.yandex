@@ -8,7 +8,6 @@ export type ElementProps = {
     classes?: string | string[],
     events?: Record<string, any>,
     children?: Record<string, Block>
-    // attributes?: Record<string, string>
 };
 
 export abstract class Block<Props extends Record<string, any> = any> {
@@ -57,7 +56,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
         const { tagName } = this._meta;
         this._element = this._createDocumentElement(tagName);
         this._setClassList();
-        // this._setAttrs();
     }
 
     initChildren(): void { }
@@ -224,14 +222,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
         }
     }
 
-    // _setAttrs(): void {
-    //     const { attributes = null } = this.props;
-    //     if (attributes !== null) {
-    //         Object.entries(attributes).forEach(([key, value]: [string, any]) => {
-    //             this._element.setAttribute(key, value.toString());
-    //         });
-    //     }
-    // }
 
     show(): void {
         this.getContent().style.display = 'block';
