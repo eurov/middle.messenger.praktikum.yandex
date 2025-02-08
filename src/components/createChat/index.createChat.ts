@@ -2,9 +2,10 @@ import template from './createChat.tpl';
 import { ChatController } from '@controllers/chatsController';
 import { ModalController } from '@/controllers/modalController';
 import Button from '@components/button/index.button';
-import ProfileInput from '@components/profileInput/index.profileinput';
+import Input from '@components/input/index.input';
 import { getFormData } from '@utils/helpers';
 import { Block, ElementProps } from '@utils/block';
+
 
 async function onClick(event: SubmitEvent) {
     try {
@@ -22,17 +23,25 @@ export class CreateChat extends Block {
             ...props,
             style: 'create-chat',
             children: {
-                input: new ProfileInput({
+                input: new Input({
                     name: 'title',
-                    required: true,
-                    placeholder: 'Ромашковый чат',
+                    placeholder: 'Enter title',
                     value: '',
                     type: 'text',
-                    label: 'Имя чата',
-                    rules: ['not-empty'],
+                    required: true,
                 }),
-                button: new Button({
-                    text: 'Создать',
+                createButton: new Button({
+                    classes: ['button', 'primary'],
+                    text: 'Create',
+                }),
+                closeButton: new Button({
+                    text: 'Cancel',
+                    classes: ['button', 'secondary'],
+                    events: {
+                        click: () => {
+                            ModalController.close();
+                        },
+                    },
                 }),
             },
             events: {

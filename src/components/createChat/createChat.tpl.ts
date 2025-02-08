@@ -1,7 +1,10 @@
 export default `
-<div>New chat</div>
+<div class="modal-title">New chat</div>
 <form action="" method="get">
     {{{input}}}
-    {{{button}}}
+    <div class="actions-container">
+        {{{createButton}}}
+        {{{closeButton}}}
+    </div>
 </form>
 `;
