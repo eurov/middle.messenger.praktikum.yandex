@@ -96,9 +96,8 @@
         .actions-container {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            font-size: 12px;
-            padding: 21px 10px;
+            gap: 40%;
+            padding: 1rem;
         }
     }
 }

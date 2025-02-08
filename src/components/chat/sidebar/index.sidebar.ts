@@ -20,7 +20,7 @@ export default class SideBarPanel extends Block {
             children: {
                 newChatButton: new Button({
                     text: 'New chat',
-                    classes: 'new-chat',
+                    classes: ['button', 'secondary'],
                     events: {
                         click: onClick,
                     },
@@ -28,7 +28,7 @@ export default class SideBarPanel extends Block {
                 profileLink: new Link({
                     text: 'Profile',
                     href: '/profile',
-                    // classes: 'profile-link',
+                    classes: ['button', 'secondary'],
                 }),
                 chatItems: new ChatItem({ ...props }),
                 modal: new Modal({}),

@@ -21,20 +21,17 @@
             background: var(--color-dark-blue);
         }
     }
+    &.secondary {
+        background: var(--color-bg-gray);
+        color: var(--color-blue);
+        font-size: 13px;
+        transition: 0.3s background;
+        width: 100%;
+
+        &:hover,
+        &:focus {
+            background: var(--color-bg-dark-gray);
+        }
+    }
 }
 
-.create-button {
-      align-items: center;
-      background: var(--color-bg-gray);
-      cursor: pointer;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      min-height: 100vh;
-      transition: 1s background-color;
-      width: 64px;
-
-      &:hover {
-          background: var(--color-bg-dark-gray);
-      }
-  }
