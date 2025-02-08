@@ -1,4 +1,4 @@
-import { BaseApi } from '@/api/utils/baseApi';
+import { BaseApi } from '@/api/baseApi';
 
 
 export interface ISignupData extends Record<string, string> {
@@ -34,11 +34,11 @@ class AuthApi extends BaseApi {
     signup(data: ISignupData) {
         return this.http.post('/signup', data);
     }
-    
+
     signin(data: ISigninData) {
         return this.http.post('/signin', data);
     }
-    
+
     logout() {
         return this.http.post('/logout');
     }
