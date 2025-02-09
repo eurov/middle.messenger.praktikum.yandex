@@ -1,0 +1,12 @@
+.input-chat {
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    background-color: var(--color-bg-gray);
+    height: 32px;
+
+    &::placeholder {
+        font-size: medium;
+        padding-left: 10px;
+    }
+}
