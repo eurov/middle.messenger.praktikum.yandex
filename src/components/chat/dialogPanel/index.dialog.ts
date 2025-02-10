@@ -18,6 +18,7 @@ class ChatMessagesBlock extends Block{
             children: {
                 addUser: new ModalItem({
                     text: 'Add user',
+                    classes: ['modal-item'],
                     events: {
                         click: async () => {
                             ModalController.open(ModalTypes.ADD_USER);
@@ -26,6 +27,7 @@ class ChatMessagesBlock extends Block{
                 }),
                 deleteUser: new ModalItem({
                     text: 'Kick user',
+                    classes: ['modal-item'],
                     events: {
                         click: async () => {
                             if (this.props.selectedChat) {
