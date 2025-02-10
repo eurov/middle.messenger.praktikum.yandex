@@ -12,9 +12,9 @@
 
         &-list {
             position: absolute;
+            vertical-align: middle;
             right: 0;
             opacity: 0;
-            padding-left: 10px;
             visibility: hidden;
             width: 200px;
             background-color: #fff;
@@ -29,6 +29,20 @@
                 height: 15px;
                 top: -12px;
             }
+            .modal-item {
+                width: 100%;
+                height: 2.5rem;
+                line-height: 2.5rem;
+                display: block;
+                text-align: center;
+                cursor: pointer;
+                &:hover,
+                &:focus {
+                    background: var(--color-bg-gray);
+                    border-radius: 12px;
+                }
+            }
+        
         }
     
         &-button {

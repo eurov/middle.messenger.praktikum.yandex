@@ -12,6 +12,10 @@
         padding: 10px;
         position: relative;
         height: 67px;
+        &:hover,
+        &:focus {
+            background: #e4edfd;
+        }
 
         &::before,
         &:last-child::after {
