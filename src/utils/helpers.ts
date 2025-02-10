@@ -1,6 +1,3 @@
-// import { app } from '@/main';
-
-
 const validationRules = new Map<string, any>([
     ['name-valid', (value: string) => !/^[А-ЯA-ZЁ][а-яёA-Za-z-]*$/g.test(value) && `латиница или кириллица,
 первая буква должна быть заглавной, без пробелов и без цифр, нет спецсимволов (допустим только дефис).`],
@@ -18,6 +15,7 @@ const validationRules = new Map<string, any>([
     ['not-empty', (value: string) => !/.+/g.test(value)
         && 'не должно быть пустым'],
 ]);
+
 export const validateInput = (value: string, rules: string[]) => {
     for (const rule of rules) {
         const validationRuleHandler = validationRules.get(rule);
@@ -29,24 +27,7 @@ export const validateInput = (value: string, rules: string[]) => {
     return false;
 };
 
-// const isValid = (event: SubmitEvent) => {
-//     event.preventDefault();
-//     const formInputs = (event.target as Element).querySelectorAll('input');
-//     return Array.from(formInputs).every(input => !input.classList.contains('invalid'));
-// };
 
-// export const validateSignin = (event: SubmitEvent) => {
-//     if (isValid(event)) {
-//         app.url = '/chats';
-//         app.render();
-//     }
-// };
-// export const validateProfile = (event: SubmitEvent) => {
-//     if (isValid(event)) {
-//         app.url = '/profile';
-//         app.render();
-//     }
-// };
 export const getFormData = (event: SubmitEvent) => {
     event.preventDefault();
     const formData: Record<string, string> = {};

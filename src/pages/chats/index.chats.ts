@@ -17,7 +17,7 @@ export default class ChatsPage extends Block {
         });
     }
 
-    componentDidMount(_oldProps?: { [x: string]: any; } | undefined): void {
+    componentDidMount(_oldProps?: Record<string, any> | undefined): void {
         ChatController.getChats();
     }
 

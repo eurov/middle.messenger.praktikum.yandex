@@ -1,9 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* global NodeJS */
-/* eslint no-undef: "error" */
 import EventBus from './eventBus';
 
-// eslint-disable-next-line no-shadow
 export enum WSTransportEvents {
     Connected = 'connected',
     Error = 'error',

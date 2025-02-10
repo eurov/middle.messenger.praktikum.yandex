@@ -14,7 +14,7 @@ export class AuthController {
         try {
             await authApi.signin(data);
             await this.fetchUser();
-            router.go(Routes.Messages);
+            router.go(Routes.Chats);
         } catch (e) {
             if (e instanceof Error && 'reason' in e) console.error(e.reason);
             console.error(e);
@@ -26,7 +26,7 @@ export class AuthController {
             console.log(data)
             await authApi.signup(data);
             await this.fetchUser();
-            router.go(Routes.Messages);
+            router.go(Routes.Chats);
         } catch (e) {
             if (e instanceof Error && 'reason' in e) console.error(e.reason);
             console.error(e);
@@ -35,8 +35,7 @@ export class AuthController {
 
     static async logout() {
         try {
-            await authApi.logout();
-            store.set('user', undefined);
+            authApi.logout()
             router.go(Routes.Login);
         } catch (e) {
             if (e instanceof Error && 'reason' in e) console.error(e.reason);
