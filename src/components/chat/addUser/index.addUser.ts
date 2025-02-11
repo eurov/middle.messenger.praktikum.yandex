@@ -1,11 +1,12 @@
 import template from './addUser.tpl';
 import { Block } from '@utils/block';
 import Button from '@components/button/index.button';
-import ProfileInput from '@components/profileInput/index.profileinput';
+import Input from '@components/input/index.input';
 import { UserController } from '@/controllers/userController';
 import { ChatController } from '@/controllers/chatsController';
 import { withStore, IState } from '@/utils/store';
 import { getFormData } from '@utils/helpers';
+import { ModalController } from '@/controllers/modalController';
 
 async function onClick(event: SubmitEvent) {
     try {
@@ -19,6 +20,7 @@ async function onClick(event: SubmitEvent) {
 const getUserId = (element: EventTarget | null): string | null => {
     if (!element) return null;
     const userId = (element as HTMLElement).getAttribute('data-user-id');
+    console.log(userId)
     return userId || getUserId((element as HTMLElement).parentElement);
 };
 
@@ -26,16 +28,25 @@ class AddUser extends Block {
     constructor(props: any) {
         super({
             ...props,
-            style: 'create-chat',
+            classes: 'create-chat',
             children: {
-                input: new ProfileInput({
-                    name: 'login',
-                    placeholder: '',
-                    value: '',
+                input: new Input({
+                    name: 'search',
+                    placeholder: 'Search by login',
                     required: true,
                 }),
-                button: new Button({
-                    text: 'Поиск',
+                buttonSearch: new Button({
+                    text: 'Search',
+                    classes: ['button', 'primary']
+                }),
+                closeButton: new Button({
+                    text: 'Cancel',
+                    classes: ['button', 'secondary'],
+                    events: {
+                        click: () => {
+                            ModalController.close();
+                        },
+                    },
                 }),
             },
             events: {
