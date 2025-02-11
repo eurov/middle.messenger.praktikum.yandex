@@ -7,7 +7,7 @@ export default `
         </div>
         <div class="chat-dialog__header-button">
             <div class="chat-dialog__header-button-action">
-                <img alt="icon" src="three-dots-vertical.svg">
+                <img alt="icon" src="/three-dots-vertical.svg">
                 <div class="chat-dialog__header-list">
                     <div>{{{addUser}}}</div>
                     <div>{{{deleteUser}}}</div>
@@ -22,7 +22,7 @@ export default `
             name="message"
             required/>
         <button type="submit" class="chat-dialog__send">
-            <img src="arrow-up-short.svg" />
+            <img src="/arrow-up-short.svg" />
         </button>
     </form>
     {{else}}

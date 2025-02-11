@@ -1,7 +1,7 @@
 export default `
     <a href="/profile" class="profile__back-button">
         <div class="profile__back-icon">
-            <img src="/public/arrow-left-short.svg" />
+            <img src="/arrow-left-short.svg" />
         </div>
     </a>
     <div class="profile__main-content">
