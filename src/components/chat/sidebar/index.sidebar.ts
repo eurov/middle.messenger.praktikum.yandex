@@ -16,7 +16,7 @@ const onClick = () => {
 export default class SideBarPanel extends Block {
     constructor(props: any) {
         super({
-            classes: 'chat__chats-sidebar',
+            classes: 'chat__sidebar',
             children: {
                 newChatButton: new Button({
                     text: 'New chat',

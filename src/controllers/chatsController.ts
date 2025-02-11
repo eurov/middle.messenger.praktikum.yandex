@@ -56,6 +56,7 @@ export class ChatController {
 
     static async selectCurrentChat(id: string) {
         store.set('currentChat', +id);
+        document.querySelector(`[data-chat="${id}"]`)?.classList.add('active')
     }
 
     static async addUserToChat(chatId: number, userId: number) {

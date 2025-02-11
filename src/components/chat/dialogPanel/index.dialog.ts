@@ -5,7 +5,7 @@ import { ModalController } from '@/controllers/modalController';
 import { ChatController } from '@/controllers/chatsController';
 import MessageCard from '@components/chat/messageCard/index.messageCard';
 import ModalItem from '@/components/modal/index.modalItem'
-// import Avatar from '../../Avatar/index';
+import Avatar from '@/components/avatar/index.avatar';
 import { getFormData } from '@/utils/helpers';
 import { withStore, IState, ModalTypes } from '@/utils/store';
 
@@ -26,7 +26,7 @@ class ChatMessagesBlock extends Block{
                     },
                 }),
                 deleteUser: new ModalItem({
-                    text: 'Kick user',
+                    text: 'Delete user',
                     classes: ['modal-item'],
                     events: {
                         click: async () => {
@@ -38,17 +38,17 @@ class ChatMessagesBlock extends Block{
                     },
                 }),
                 messageCards: new MessageCard({}),
-                // avatar: new Avatar({
-                //     events: {
-                //         change: async (event: any) => {
-                //             const fileTarget = (event.target as HTMLInputElement).files![0];
-                //             if (this.props.selectedChat) {
-                //                 ChatController
-                //                     .uploadChatAvatar(fileTarget, +this.props.selectedChat);
-                //             }
-                //         },
-                //     },
-                // }),
+                avatar: new Avatar({
+                    events: {
+                        change: async (event: any) => {
+                            const fileTarget = (event.target as HTMLInputElement).files![0];
+                            if (this.props.selectedChat) {
+                                ChatController
+                                    .uploadChatAvatar(fileTarget, +this.props.selectedChat);
+                            }
+                        },
+                    },
+                }),
             },
             events: {
                 submit: (e: SubmitEvent) => {

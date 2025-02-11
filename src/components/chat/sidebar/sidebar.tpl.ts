@@ -1,12 +1,12 @@
 export default `
 
-<header class='chat-list-header'>
+<header class='chat-list__header'>
     <div class="actions-container">
         {{{newChatButton}}}
         {{{profileLink}}}
     </div>
-    <div class="chat__search-container">
-    <input class="chat__search"
+    <div>
+    <input class="chat-list__search"
         placeholder="Search"
         type="text"
         name="search"/>
