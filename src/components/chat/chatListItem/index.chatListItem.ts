@@ -15,7 +15,7 @@ class ChatItemBlock extends Block {
     constructor(props: ElementProps) {
         super({
             ...props,
-            classes: 'chat__chats-list',
+            classes: 'chat-list__items',
             events: {
                 click: (e: Event) => {
                     const chatId = getChatId(e.target);
