@@ -4,62 +4,14 @@
     &__main-screen {
         flex-grow: 1;
     }
-
     &__container {
         display: flex;
         height: 100vh;
     }
-
-    &__chats-sidebar {
+    &__sidebar {
         background: #FBFBFB;
         border-right: 1px solid #EAEAEA;
         width: 310px;
     }
 
-    &__search {
-        background: #EFEFEF;
-        border: none;
-        border-radius: 5px;
-        display: block;
-        font-size: 12px;
-        margin: 0 10px;
-        outline: none;
-        padding: 10px;
-        text-align: center;
-        width: calc(100% - 20px);
-
-        &:focus,
-        &.not-empty {
-            padding-left: 34px;
-            text-align: left;
-
-            &+img {
-                left: 20px;
-            }
-        }
-
-        &::placeholder {
-            color: var(--color-text-gray);
-        }
-
-        &-container {
-            position: relative;
-
-            img {
-                left: calc(50% - 38px);
-                position: absolute;
-                top: 10px;
-            }
-        }
-    }
-
-    &__chats-list {
-        list-style: none;
-        margin: 14px 0 0;
-        padding: 0;
-    }
-
-    &__empty-message {
-        color: var(--color-text-gray);
-    }
 }

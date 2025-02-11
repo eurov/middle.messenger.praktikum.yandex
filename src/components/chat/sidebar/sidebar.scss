@@ -1,100 +1,46 @@
 .chat-list {
-    &-item {
-        cursor: pointer;
-        display: grid;
-        gap: 4px 10px;
-        grid-template:
-            "avatar name time" auto
-            "avatar message ." auto
-            "avatar message counter" auto / 50px 1fr 50px;
-        margin-bottom: 4px;
-        margin-top: 2px;
+    &__search {
+        background: #EFEFEF;
+        border: none;
+        border-radius: 5px;
+        display: block;
+        font-size: 12px;
+        margin: 5px 10px;
+        // margin-bottom: 4px;
+        outline: none;
         padding: 10px;
-        position: relative;
-        height: 67px;
-        &:hover,
-        &:focus {
-            background: #e4edfd;
-        }
+        text-align: center;
+        width: calc(100% - 20px);
 
-        &::before,
-        &:last-child::after {
-            background: #EAEAEA;
-            content: "";
-            height: 1px;
-            left: 10px;
-            position: absolute;
-            right: 10px;
-            top: -2px;
-        }
+        &:focus,
+        &.not-empty {
+            padding-left: 34px;
+            text-align: left;
 
-        &:last-child {
-            margin-bottom: 2px;
-
-            &::after {
-                bottom: -2px;
-                top: auto;
+            &+img {
+                left: 20px;
             }
         }
 
-        &.active {
-            background: #E4EDFD;
-        }
-
-        &__unread-counter {
-            align-items: center;
-            background: var(--color-blue);
-            border-radius: 50%;
-            color: var(--color-white);
-            display: flex;
-            font-size: 11px;
-            grid-area: counter;
-            height: 20px;
-            justify-content: center;
-            justify-self: end;
-            line-height: 12px;
-            width: 20px;
-        }
-
-        &__time {
+        &::placeholder {
             color: var(--color-text-gray);
-            font-size: 9px;
-            grid-area: time;
-            justify-self: end;
-            line-height: 13px;  
         }
 
-        &__name {
-            color: var(--color-black);
-            font-size: 13px;
-            font-weight: 600;
-            grid-area: name;
-        }
+        &-container {
+            position: relative;
 
-        &__message {
-            -webkit-box-orient: vertical;
-            color: var(--color-text-gray);
-            display: -webkit-box;
-            font-size: 12px;
-            grid-area: message;
-            line-height: 15px;
-            overflow: hidden;
-        }
-
-        &__avatar {
-            background: #EFEFEF;
-            border-radius: 50%;
-            grid-area: avatar;
-            height: 47px;
-            width: 47px;
-        }
-
-        &__mine-mark {
-            color: var(--color-black);
-            font-size: 12px;
+            img {
+                left: calc(50% - 38px);
+                position: absolute;
+                top: 10px;
+            }
         }
     }
-    &-header {
+    &__items {
+        margin: 0;
+        padding: 0;
+    }
+    &__header {
         display: flex;
         flex-direction: column;
 
@@ -102,7 +48,48 @@
             display: flex;
             justify-content: space-between;
             gap: 40%;
-            padding: 1rem;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
+    // &-item {
+    //     cursor: pointer;
+    //     display: grid;
+    //     gap: 4px 10px;
+    //     grid-template:
+    //         "avatar name time" auto
+    //         "avatar message ." auto
+    //         "avatar message counter" auto / 50px 1fr 50px;
+    //     margin-bottom: 4px;
+    //     margin-top: 2px;
+    //     padding: 10px;
+    //     position: relative;
+    //     height: 67px;
+    //     &:hover,
+    //     &:focus {
+    //         background: #e4edfd;
+    //     }
+
+    //     &::before,
+    //     &:last-child::after {
+    //         background: #EAEAEA;
+    //         content: "";
+    //         height: 1px;
+    //         left: 10px;
+    //         position: absolute;
+    //         right: 10px;
+    //         top: -2px;
+    //     }
+
+    //     &:last-child {
+    //         margin-bottom: 2px;
+
+    //         &::after {
+    //             bottom: -2px;
+    //             top: auto;
+    //         }
+    //     }
+
+
 }
