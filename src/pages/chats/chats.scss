@@ -4,10 +4,12 @@
     &__main-screen {
         flex-grow: 1;
     }
+
     &__container {
         display: flex;
         height: 100vh;
     }
+
     &__sidebar {
         background: #FBFBFB;
         border-right: 1px solid #EAEAEA;

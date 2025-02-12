@@ -6,36 +6,38 @@
 
     &__header {
         border-bottom: 1px solid #EAEAEA;
-        padding: 10px;
         display: flex;
         justify-content: space-between;
+        padding: 10px;
 
         &-list {
-            position: absolute;
-            vertical-align: middle;
-            right: 0;
-            opacity: 0;
-            visibility: hidden;
-            width: 200px;
             background-color: #fff;
             border-radius: 12px;
             box-shadow: 0 0 6px 0 rgb(0 0 0 / 14%);
+            opacity: 0;
+            position: absolute;
+            right: 0;
+            vertical-align: middle;
+            visibility: hidden;
+            width: 200px;
     
             &::before {
                 content: '';
-                position: absolute;
-                left: 0;
-                right: 0;
                 height: 15px;
+                left: 0;
+                position: absolute;
+                right: 0;
                 top: -12px;
             }
+
             .modal-item {
-                width: 100%;
+                cursor: pointer;
+                display: block;
                 height: 2.5rem;
                 line-height: 2.5rem;
-                display: block;
                 text-align: center;
-                cursor: pointer;
+                width: 100%;
+
                 &:hover,
                 &:focus {
                     background: var(--color-bg-gray);
@@ -46,8 +48,8 @@
         }
     
         &-button {
-            display: flex;
             align-items: center;
+            display: flex;
             gap: 10px;
             position: relative;
     
@@ -62,10 +64,10 @@
         }
     
         &-left {
-            display: flex;
             align-items: center;
-            gap: 10px;
+            display: flex;
             font-weight: 600;
+            gap: 10px;
         }
     }
 
@@ -185,11 +187,11 @@
 }
 
 .input-chat {
-    width: 100%;
-    border-radius: 15px;
-    border: none;
     background-color: var(--color-bg-gray);
+    border: none;
+    border-radius: 15px;
     height: 32px;
+    width: 100%;
 
     &::placeholder {
         font-size: medium;
