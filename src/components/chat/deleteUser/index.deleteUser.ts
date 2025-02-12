@@ -5,27 +5,23 @@ import { ChatController } from '@/controllers/chatsController';
 import Button from '@components/button/index.button';
 import Input from '@components/input/index.input';
 import { ModalController } from '@/controllers/modalController';
+import { getFormData } from '@/utils/helpers';
 
 
-const getUserId = (element: EventTarget | null): string | null => {
-    if (!element) return null;
-    const userId = (element as HTMLElement).getAttribute('data-user-id');
-    return userId || getUserId((element as HTMLElement).parentElement);
-};
 
 class DeleteUser extends Block {
     constructor(props: ElementProps) {
         super({
             ...props,
-            style: 'create-chat',
+            classes: 'create-chat',
             children: {
                 input: new Input({
                     name: 'search',
                     placeholder: 'Search by login',
                     required: true,
                 }),
-                buttonSearch: new Button({
-                    text: 'Search',
+                buttonDelete: new Button({
+                    text: 'Delete',
                     classes: ['button', 'primary'],
                 }),
                 closeButton: new Button({
@@ -39,11 +35,12 @@ class DeleteUser extends Block {
                 }),
             },
             events: {
-                click: async (e: Event) => {
+                submit: async (event: SubmitEvent) => {
                     try {
-                        const userId = getUserId(e.target);
+                        const { userId } = getFormData(event)
                         if (userId) {
                             await ChatController.deleteUserToChat(this.props.selectedChat, +userId);
+                            ModalController.close()
                         }
                     } catch (error) {
                         console.error(error);
