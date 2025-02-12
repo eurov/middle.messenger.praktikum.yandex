@@ -35,7 +35,8 @@ class ProfileBlock extends Block {
             ...props,
             classes: 'profile__page',
             children: {
-                changeAvatar: new ProfileAvatar({
+                profileAvatar: new ProfileAvatar({
+                    uploadInput: true,
                     events: {
                         change: async (event: any) => {
                             const fileTarget = (event.target as HTMLInputElement).files![0];

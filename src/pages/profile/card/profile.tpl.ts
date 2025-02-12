@@ -8,7 +8,7 @@ export default `
         <div class="profile__card">
 
             <div class="profile__avatar">
-                {{{changeAvatar}}}
+                {{{profileAvatar}}}
             </div>
             
             <h3 class="profile__name">{{first_name}} {{second_name}}</h3>

@@ -6,9 +6,9 @@ export default `
     </a>
     <div class="profile__main-content">
         <form class="profile__card">
-            <label class="profile__avatar" for="change-avatar">
-                {{!-- <img src="#" /> --}}
-            </label>
+            <div class="profile__avatar">
+                {{{profileAvatar}}}
+            </div>
             <input type="file" id="change-avatar" name="avatar" />
             <h3 class="profile__name">My profile</h3>
 

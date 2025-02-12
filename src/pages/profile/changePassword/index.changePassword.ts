@@ -7,6 +7,8 @@ import { withStore } from '@utils/store';
 import { IState } from '@utils/store';
 import { UserController } from '@/controllers/userController';
 import { IChangePassword } from '@/api/userApi';
+import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar'  
+
 
 const InputProps = [{
     name: 'oldPassword',
@@ -49,6 +51,7 @@ class ChangePasswordBlock extends Block {
             classes: 'profile__page',
             ...props,
             children: {
+                profileAvatar: new ProfileAvatar({}),
                 profileInput: InputProps.map((item) => new ProfileInput(item)),
                 button: new Button({
                     text: 'Save',

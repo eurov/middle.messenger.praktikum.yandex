@@ -8,6 +8,7 @@ import { UserController } from '@/controllers/userController';
 import { Routes } from '@/main';
 import { router } from '@utils/router';
 import { IUser } from '@/api/authApi';
+import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar'  
 
 
 function onSubmit(event: SubmitEvent) {
@@ -64,6 +65,7 @@ class ChangeDataBlock extends Block {
             ...props,
             classes: 'profile__page',
             children: {
+                profileAvatar: new ProfileAvatar({}),
                 profileInput: inputProps.map((item) => new ProfileInput(item)),
                 button: new Button({
                     text: 'Save',
