@@ -4,8 +4,8 @@ import { Block, ElementProps } from '@utils/block';
 import Button from '@components/button/index.button';
 import { ModalController } from '@controllers/modalController';
 import { CreateChat } from '@components/createChat/index.createChat';
-// import UserEdit from '../UserEdit/index';
-// import UserDelete from '../UserDelete/index';
+import AddUser from '@/components/chat/addUser/index.addUser';
+import DeleteUser from '@components/chat/deleteUser/index.deleteUser';
 
 
 class ModalBlock extends Block {
@@ -14,8 +14,8 @@ class ModalBlock extends Block {
             ...props,
             children: {
                 createChat: new CreateChat({}),
-                // addUser: new UserEdit({}),
-                // deleteUser: new deleteUser({}),
+                addUser: new AddUser({}),
+                deleteUser: new DeleteUser({}),
 
                 
                 closeButton: new Button({
