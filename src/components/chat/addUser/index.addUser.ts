@@ -8,7 +8,7 @@ import { withStore, IState } from '@/utils/store';
 import { getFormData } from '@utils/helpers';
 import { ModalController } from '@/controllers/modalController';
 
-async function onClick(event: SubmitEvent) {
+async function searchByLogin(event: SubmitEvent) {
     try {
         const { login } = getFormData(event);
         await UserController.searchUserByLogin(login);
@@ -17,11 +17,17 @@ async function onClick(event: SubmitEvent) {
     }
 }
 
-const getUserId = (element: EventTarget | null): string | null => {
-    if (!element) return null;
-    const userId = (element as HTMLElement).getAttribute('data-user-id');
-    return userId || getUserId((element as HTMLElement).parentElement);
-};
+async function addUserToChat(event: SubmitEvent, chatId: number) {
+    try {
+        const { userId } = getFormData(event)
+        if (userId && chatId) {
+            await ChatController.addUserToChat(chatId, +userId);
+            ModalController.close();
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 class AddUser extends Block {
     constructor(props: any) {
@@ -30,12 +36,12 @@ class AddUser extends Block {
             classes: 'create-chat',
             children: {
                 input: new Input({
-                    name: 'search',
+                    name: 'login',
                     placeholder: 'Search by login',
                     required: true,
                 }),
                 buttonSearch: new Button({
-                    text: 'Search',
+                    text: 'Add',
                     classes: ['button', 'primary'],
                 }),
                 closeButton: new Button({
@@ -49,17 +55,18 @@ class AddUser extends Block {
                 }),
             },
             events: {
-                click: async (e: Event) => {
-                    try {
-                        const userId = getUserId(e.target);
-                        if (userId && this.props.selectedChat) {
-                            await ChatController.addUserToChat(this.props.selectedChat, +userId);
-                        }
-                    } catch (error) {
-                        console.error(error);
+                submit: (event: SubmitEvent) => {
+                    switch ((event.target as HTMLFormElement).id) {
+                        case "search-form":
+                            searchByLogin(event)
+                            break
+                        case "add-user-form":
+                            addUserToChat(event, this.props.selectedChat)
+                            break
+                        default:
+                            break
                     }
                 },
-                submit: onClick,
             },
         }, 'div');
     }

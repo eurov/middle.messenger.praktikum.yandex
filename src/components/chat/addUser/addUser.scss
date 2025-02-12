@@ -3,11 +3,34 @@
     flex-direction: column;
     max-height: 200px;
     overflow: auto;
+    margin-top: 10px;
 
+    
     &__card {
-        border: 2px solid $main;
-        border-radius: 5px;
+        display: flex;
         margin: 5px 0;
-        padding: 5px;
+        cursor: pointer;
     }
+    .select-user {
+        width: 10px;
+        margin-right: 10px;
+    }
+}
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    
+    .search-button {
+        cursor: pointer;
+        border: none;
+        height: 30px;
+        border-radius: 8px;
+        background-color: #EAEAEA;
+    }
+}
+
+h4 {
+    color: var(--color-text-gray);
+
 }
