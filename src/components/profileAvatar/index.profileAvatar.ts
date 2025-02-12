@@ -10,17 +10,17 @@ export enum ProfileAvatarSizes {
 }
 
 export interface IProfileAvatarProps extends ElementProps {
-    url?: string,
-    variant?: ProfileAvatarSizes
+    url: string | null,
+    size?: ProfileAvatarSizes
 }
 
 
-
 class ProfileAvatarBlock extends Block {
-    constructor({ variant = ProfileAvatarSizes.MEDIUM, ...props }: IProfileAvatarProps) {
+    constructor({ size = ProfileAvatarSizes.MEDIUM, ...props }: IProfileAvatarProps) {
+        console.log(props)
         super({
             ...props,
-            classes: `profile-avatar__${variant}`,
+            classes: `profile-avatar__${size}`,
         });
     }
     
@@ -30,7 +30,7 @@ class ProfileAvatarBlock extends Block {
 }
 
 const mapStateToProps = (state: IState) => ({
-    url: `https://ya-praktikum.tech/api/v2/resources/${state.user?.avatar}`,
+    url: state.user?.avatar ? `https://ya-praktikum.tech/api/v2/resources/${state.user?.avatar}` : '/empty-avatar.png',
 });
 
 
