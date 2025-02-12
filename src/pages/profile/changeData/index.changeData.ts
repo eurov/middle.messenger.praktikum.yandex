@@ -8,17 +8,17 @@ import { UserController } from '@/controllers/userController';
 import { Routes } from '@/main';
 import { router } from '@utils/router';
 import { IUser } from '@/api/authApi';
-import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar'  
+import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar';  
 
 
-function onSubmit(event: SubmitEvent) {
+async function onSubmit(event: SubmitEvent) {
     try {
         const data = getFormData(event);
-        UserController.changeUserProfile(data as unknown as IUser);
+        await UserController.changeUserProfile(data as unknown as IUser);
         router.go(Routes.Profile);
     } catch (e) {
         if (e instanceof Error && 'reason' in e) console.error(e.reason);
-        console.error(e)
+        console.error(e);
     }
 }
 

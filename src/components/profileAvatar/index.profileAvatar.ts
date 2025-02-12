@@ -6,7 +6,7 @@ import { withStore, IState } from '@/utils/store';
 export enum ProfileAvatarSizes {
     MEDIUM = 'medium',
     SMALL = 'small',
-    BIG = 'big'
+    BIG = 'big',
 }
 
 export interface IProfileAvatarProps extends ElementProps {
@@ -17,7 +17,7 @@ export interface IProfileAvatarProps extends ElementProps {
 
 class ProfileAvatarBlock extends Block {
     constructor({ size = ProfileAvatarSizes.MEDIUM, ...props }: IProfileAvatarProps) {
-        console.log(props)
+        console.log(props);
         super({
             ...props,
             classes: `profile-avatar__${size}`,

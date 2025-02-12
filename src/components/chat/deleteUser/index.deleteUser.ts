@@ -26,7 +26,7 @@ class DeleteUser extends Block {
                 }),
                 buttonSearch: new Button({
                     text: 'Search',
-                    classes: ['button', 'primary']
+                    classes: ['button', 'primary'],
                 }),
                 closeButton: new Button({
                     text: 'Cancel',
@@ -43,7 +43,7 @@ class DeleteUser extends Block {
                     try {
                         const userId = getUserId(e.target);
                         if (userId) {
-                            ChatController.deleteUserToChat(this.props.selectedChat, +userId);
+                            await ChatController.deleteUserToChat(this.props.selectedChat, +userId);
                         }
                     } catch (error) {
                         console.error(error);

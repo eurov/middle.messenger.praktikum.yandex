@@ -1,4 +1,4 @@
-import template from './changePassword.tpl'
+import template from './changePassword.tpl';
 import { Block } from '@/utils/block';
 import Button from '@/components/button/index.button';
 import ProfileInput from '@/components/profileInput/index.profileinput';
@@ -7,7 +7,7 @@ import { withStore } from '@utils/store';
 import { IState } from '@utils/store';
 import { UserController } from '@/controllers/userController';
 import { IChangePassword } from '@/api/userApi';
-import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar'  
+import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar';  
 
 
 const InputProps = [{
@@ -33,15 +33,15 @@ const InputProps = [{
 },
 ];
 
-function onSubmit(event: SubmitEvent) {
+async function onSubmit(event: SubmitEvent) {
     try {
         const data = getFormData(event);
         if (data.newPassword !== data.repeatPassword) {
             alert("The passwords you entered don't match.");
         }
-        UserController.changePassword(data as unknown as IChangePassword);
+        await UserController.changePassword(data as unknown as IChangePassword);
     } catch (e) {
-        console.error(e)
+        console.error(e);
     }
 }
 
@@ -55,7 +55,7 @@ class ChangePasswordBlock extends Block {
                 profileInput: InputProps.map((item) => new ProfileInput(item)),
                 button: new Button({
                     text: 'Save',
-                    classes: ['profile__save-button', 'button', 'primary']
+                    classes: ['profile__save-button', 'button', 'primary'],
                 }),
             },
             events: {

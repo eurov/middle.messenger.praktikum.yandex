@@ -6,7 +6,7 @@ import { Routes } from '@/main';
 export class AuthController {
     static async fetchUser() {
         const user = await authApi.getUser();
-        console.log(user)
+        console.log(user);
         store.set('user', user);
     }
 
@@ -23,7 +23,7 @@ export class AuthController {
 
     static async signup(data: ISignupData) {
         try {
-            console.log(data)
+            console.log(data);
             await authApi.signup(data);
             await this.fetchUser();
             router.go(Routes.Chats);
@@ -35,7 +35,7 @@ export class AuthController {
 
     static async logout() {
         try {
-            authApi.logout()
+            await authApi.logout();
             router.go(Routes.Login);
         } catch (e) {
             if (e instanceof Error && 'reason' in e) console.error(e.reason);

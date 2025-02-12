@@ -11,5 +11,5 @@ export default `{{#each chatsList}}
     <div class="chat-item__content-date">{{last_message.time}}</div>
     {{/if}}
 </li>
-{{/each}}`
+{{/each}}`;
 

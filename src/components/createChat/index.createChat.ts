@@ -10,7 +10,7 @@ import { Block, ElementProps } from '@utils/block';
 async function onClick(event: SubmitEvent) {
     try {
         const { title } = getFormData(event);
-        await ChatController.create(title as string);
+        await ChatController.create(title);
         ModalController.close();
     } catch (e) {
         console.error(e);

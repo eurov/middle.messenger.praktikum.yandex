@@ -11,16 +11,15 @@ import { ModalController } from '@/controllers/modalController';
 async function onClick(event: SubmitEvent) {
     try {
         const { login } = getFormData(event);
-        UserController.searchUserByLogin(login);
+        await UserController.searchUserByLogin(login);
     } catch (e) {
-        console.error(e)
+        console.error(e);
     }
 }
 
 const getUserId = (element: EventTarget | null): string | null => {
     if (!element) return null;
     const userId = (element as HTMLElement).getAttribute('data-user-id');
-    console.log(userId)
     return userId || getUserId((element as HTMLElement).parentElement);
 };
 
@@ -37,7 +36,7 @@ class AddUser extends Block {
                 }),
                 buttonSearch: new Button({
                     text: 'Search',
-                    classes: ['button', 'primary']
+                    classes: ['button', 'primary'],
                 }),
                 closeButton: new Button({
                     text: 'Cancel',
@@ -54,7 +53,7 @@ class AddUser extends Block {
                     try {
                         const userId = getUserId(e.target);
                         if (userId && this.props.selectedChat) {
-                            ChatController.addUserToChat(this.props.selectedChat, +userId);
+                            await ChatController.addUserToChat(this.props.selectedChat, +userId);
                         }
                     } catch (error) {
                         console.error(error);

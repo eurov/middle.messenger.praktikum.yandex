@@ -4,7 +4,7 @@ import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
 import { AuthController } from '@/controllers/authController';
 import { getFormData } from '@utils/helpers';
-import { ISigninData } from '@api/authApi'
+import { ISigninData } from '@api/authApi';
 
 
 
@@ -41,7 +41,7 @@ export default class LoginPage extends Block {
                 button,
             },
             events: {
-                submit: onSubmit
+                submit: onSubmit,
             },
         });
     }

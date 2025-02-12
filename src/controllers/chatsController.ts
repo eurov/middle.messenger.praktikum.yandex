@@ -38,7 +38,7 @@ export class ChatController {
     static async create(title: string) {
         try {
             await chatsApi.createChat(title);
-            this.getChats();
+            await this.getChats();
         } catch (e) {
             console.error(e);
         }
@@ -54,9 +54,9 @@ export class ChatController {
         }
     }
 
-    static async selectCurrentChat(id: string) {
+    static selectCurrentChat(id: string) {
         store.set('currentChat', +id);
-        document.querySelector(`[data-chat="${id}"]`)?.classList.add('active')
+        document.querySelector(`[data-chat="${id}"]`)?.classList.add('active');
     }
 
     static async addUserToChat(chatId: number, userId: number) {

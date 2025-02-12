@@ -3,8 +3,8 @@ import { Block } from '@utils/block';
 import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
 import { getFormData } from '@/utils/helpers';
-import { AuthController } from '@controllers/authController'
-import { ISignupData } from '@/api/authApi'
+import { AuthController } from '@controllers/authController';
+import { ISignupData } from '@/api/authApi';
 
 
 const inputProps = [
@@ -57,9 +57,9 @@ const button = [new Button({
 })];
 
 
-function onSubmit(event: SubmitEvent) {
+async function onSubmit(event: SubmitEvent) {
     const data = getFormData(event);
-    AuthController.signup(data as ISignupData);
+    await AuthController.signup(data as ISignupData);
 }
 
 export default class SignupPage extends Block {

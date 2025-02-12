@@ -1,9 +1,11 @@
+import { Block } from './block';
+
 export class Route {
     _pathname: string;
 
     _blockClass: any;
 
-    _block: any | null;
+    _block: Block | null;
 
     _props: Record<string, any>;
 
@@ -34,8 +36,8 @@ export class Route {
     render() {
         if (!this._block) {
             this._block = new this._blockClass();
-            const root = document.getElementById(this._props.rootQuery)
-            if (root) {
+            const root = document.getElementById(this._props.rootQuery);
+            if (root && this._block) {
                 root.append(this._block.getContent());
             }
             return;

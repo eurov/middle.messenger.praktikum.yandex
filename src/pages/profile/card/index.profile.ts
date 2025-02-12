@@ -5,12 +5,12 @@ import { Routes } from '@/main';
 import { router } from '@utils/router';
 import { AuthController } from '@/controllers/authController';
 import { IState, withStore } from '@/utils/store';
-import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar'  
+import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar';  
 import { UserController } from '@/controllers/userController';
 
 
 
-async function onClickChangeData() {
+function onClickChangeData() {
     try {
         router.go(Routes.ChangeData);
     } catch (e) {
@@ -18,7 +18,7 @@ async function onClickChangeData() {
     }
 }
 
-async function onClickChangePassword() {
+function onClickChangePassword() {
     try {
         router.go(Routes.ChangePassword);
     } catch (e) {
@@ -26,7 +26,9 @@ async function onClickChangePassword() {
     }
 }
 
-const onClickExit = async () => await AuthController.logout();
+async function onClickExit() {
+    await AuthController.logout();
+}
 
 
 class ProfileBlock extends Block {
@@ -40,7 +42,7 @@ class ProfileBlock extends Block {
                     events: {
                         change: async (event: any) => {
                             const fileTarget = (event.target as HTMLInputElement).files![0];
-                            UserController.changeUserAvatar(fileTarget);
+                            await UserController.changeUserAvatar(fileTarget);
                         },
                     },
                 }),
@@ -62,7 +64,7 @@ class ProfileBlock extends Block {
                     text: 'Log out',
                     classes: ['profile__field'],
                     events: {
-                        click: onClickExit
+                        click: onClickExit,
                     },
                 }),
             },

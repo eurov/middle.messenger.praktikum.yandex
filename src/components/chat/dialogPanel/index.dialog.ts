@@ -4,13 +4,13 @@ import  MessagesController from '@/controllers/messageController';
 import { ModalController } from '@/controllers/modalController';
 import { ChatController } from '@/controllers/chatsController';
 import MessageCard from '@components/chat/messageCard/index.messageCard';
-import ModalItem from '@/components/modal/index.modalItem'
+import ModalItem from '@/components/modal/index.modalItem';
 import Avatar from '@/components/avatar/index.avatar';
 import { getFormData } from '@/utils/helpers';
 import { withStore, IState, ModalTypes } from '@/utils/store';
 
 
-class ChatMessagesBlock extends Block{
+class ChatMessagesBlock extends Block {
     constructor(props: any) {
         super({
             ...props,
@@ -20,7 +20,7 @@ class ChatMessagesBlock extends Block{
                     text: 'Add user',
                     classes: ['modal-item'],
                     events: {
-                        click: async () => {
+                        click: () => {
                             ModalController.open(ModalTypes.ADD_USER);
                         },
                     },
@@ -43,7 +43,7 @@ class ChatMessagesBlock extends Block{
                         change: async (event: any) => {
                             const fileTarget = (event.target as HTMLInputElement).files![0];
                             if (this.props.selectedChat) {
-                                ChatController
+                                await ChatController
                                     .uploadChatAvatar(fileTarget, +this.props.selectedChat);
                             }
                         },
@@ -54,7 +54,7 @@ class ChatMessagesBlock extends Block{
                 submit: (e: SubmitEvent) => {
                     const { message } = getFormData(e);
                     const inputValue = (e.target as Element).querySelector('input');
-                    if (inputValue) inputValue.value = ''
+                    if (inputValue) inputValue.value = '';
                     if (this.props.selectedChat) {
                         MessagesController.sendMessage(this.props.selectedChat, message);
                     }

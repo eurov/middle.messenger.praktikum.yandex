@@ -67,7 +67,7 @@ export function merge(lhs: Indexed, rhs: Indexed): Indexed {
     return lhs;
 }
 
-export function set(object: Indexed | unknown, path: string, value: unknown): Indexed | unknown {
+export function set(object: any, path: string, value: any): any {
     if (typeof object !== 'object' || object === null) {
         return object;
     }
@@ -78,6 +78,6 @@ export function set(object: Indexed | unknown, path: string, value: unknown): In
 
     const result = path.split('.').reduceRight<Indexed>((acc, key) => ({
         [key]: acc,
-    }), value as any);
+    }), value);
     return merge(object as Indexed, result);
 }

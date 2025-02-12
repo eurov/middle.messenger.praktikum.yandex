@@ -1,6 +1,6 @@
 import { router } from '@/utils/router';
 import { AuthController } from '@controllers/authController';
-import '@components/partials.js'
+import '@components/partials.js';
 import LoginPage from '@/pages/auth/login/index.login';
 import SignupPage from '@/pages/auth/signup/index.signup';
 import ChatsPage from '@/pages/chats/index.chats';
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     .use(Routes.Profile, ProfilePage)
     .use(Routes.ChangeData, ChangeDataPage)
     .use(Routes.ChangePassword, ChangePasswordPage)
-    .use(Routes.NotFound, NotFoundPage)
+    .use(Routes.NotFound, NotFoundPage);
 
   let isProtected = true;
   switch (window.location.pathname) {

@@ -95,4 +95,4 @@ class MessagesController {
     }
 }
 
-export default new MessagesController()
+export default new MessagesController();

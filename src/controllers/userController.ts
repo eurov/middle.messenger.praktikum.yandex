@@ -37,7 +37,7 @@ export class UserController {
 
     static async getUser(id: number): Promise<IUser | undefined> {
         try {
-            return userApi.getUser(id);
+            return await userApi.getUser(id);
         } catch (e) {
             console.error(e);
             return undefined;

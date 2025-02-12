@@ -1,7 +1,7 @@
 
 import { set } from './helpers';
 import EventBus from './eventBus';
-import {Block} from '@utils/block'
+import { Block } from '@utils/block';
 import { IUser } from '@/api/authApi';
 import { IChat, IChatUser } from '@api/chatApi';
 import { Message } from '@controllers/messageController';
@@ -58,15 +58,15 @@ export function withStore<S extends Record<string, any>>(mapStateToProps: (state
     return (Component: typeof Block<S>) => {
         return class extends Component {
             constructor(props: any) {
-                const prevState = mapStateToProps(store.getState())
-                console.log(prevState)
+                const prevState = mapStateToProps(store.getState());
+                console.log(prevState);
                 super({ ...props, ...prevState });
                 store.on(StoreEvents.UPDATE, () => {
                     const newState = mapStateToProps(store.getState());
-                    console.log(newState)
+                    console.log(newState);
                     this.setProps(newState);
                 });
             }
         };
     };
-};
+}

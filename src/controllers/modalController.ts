@@ -1,7 +1,7 @@
 import { ModalTypes, store } from '@/utils/store';
 
 export class ModalController {
-    static async open(type: ModalTypes) {
+    static open(type: ModalTypes) {
         store.set('modal', type);
     }
 

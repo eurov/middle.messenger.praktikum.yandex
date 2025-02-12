@@ -9,7 +9,7 @@ enum Methods {
 }
 
 
-type HTTPMethod = <R = unknown>(url: string, options?: unknown) => Promise<R>
+type HTTPMethod = <R = unknown>(url: string, options?: unknown) => Promise<R>;
 
 
 export class HTTPTransport {
