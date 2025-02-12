@@ -7,13 +7,12 @@ export default `
     <div class="profile__main-content">
         <div class="profile__card">
 
-            <label class="profile__avatar" for="change-avatar">
-                {{!-- <img src="#" /> --}}
-            </label>
-
-            <input type="file" id="change-avatar" name="avatar" />
+            <div class="profile__avatar">
+                {{{changeAvatar}}}
+            </div>
+            
             <h3 class="profile__name">{{first_name}} {{second_name}}</h3>
-
+                
 
             <div class="profile__personal-data">
 

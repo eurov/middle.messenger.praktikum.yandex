@@ -15,23 +15,24 @@ export interface IProfileAvatarProps extends ElementProps {
 }
 
 
-const mapStateToProps = (state: IState) => ({
-    url: `https://ya-praktikum.tech/api/v2/resources/${state.user?.avatar}`,
-});
 
-class ProfileAvatar extends Block {
+class ProfileAvatarBlock extends Block {
     constructor({ variant = ProfileAvatarSizes.MEDIUM, ...props }: IProfileAvatarProps) {
         super({
             ...props,
             classes: `profile-avatar__${variant}`,
         });
     }
-
+    
     render(): DocumentFragment {
         return this.compile(template, this.props);
     }
 }
 
-const ProfileAvatarWithStore = withStore(mapStateToProps)(ProfileAvatar);
+const mapStateToProps = (state: IState) => ({
+    url: `https://ya-praktikum.tech/api/v2/resources/${state.user?.avatar}`,
+});
 
-export default ProfileAvatarWithStore;
+
+export const ProfileAvatar = withStore(mapStateToProps)(ProfileAvatarBlock);
+

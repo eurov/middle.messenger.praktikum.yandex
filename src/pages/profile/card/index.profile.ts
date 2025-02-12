@@ -5,7 +5,8 @@ import { Routes } from '@/main';
 import { router } from '@utils/router';
 import { AuthController } from '@/controllers/authController';
 import { IState, withStore } from '@/utils/store';
-// import { UserController } from '@/controllers/userController';
+import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar'  
+import { UserController } from '@/controllers/userController';
 
 
 
@@ -34,14 +35,14 @@ class ProfileBlock extends Block {
             ...props,
             classes: 'profile__page',
             children: {
-                // changeAvatar: new ProfileAvatar({
-                //     events: {
-                //         change: async (event: any) => {
-                //             const fileTarget = (event.target as HTMLInputElement).files![0];
-                //             UserController.changeUserAvatar(fileTarget);
-                //         },
-                //     },
-                // }),
+                changeAvatar: new ProfileAvatar({
+                    events: {
+                        change: async (event: any) => {
+                            const fileTarget = (event.target as HTMLInputElement).files![0];
+                            UserController.changeUserAvatar(fileTarget);
+                        },
+                    },
+                }),
                 changeDataButton: new Link({
                     text: 'Edit',
                     classes: ['profile__field'],
