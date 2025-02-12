@@ -37,10 +37,10 @@ class DeleteUser extends Block {
             events: {
                 submit: async (event: SubmitEvent) => {
                     try {
-                        const { userId } = getFormData(event)
+                        const { userId } = getFormData(event);
                         if (userId) {
                             await ChatController.deleteUserToChat(this.props.selectedChat, +userId);
-                            ModalController.close()
+                            ModalController.close();
                         }
                     } catch (error) {
                         console.error(error);

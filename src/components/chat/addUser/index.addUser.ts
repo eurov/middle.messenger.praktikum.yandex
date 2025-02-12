@@ -19,7 +19,7 @@ async function searchByLogin(event: SubmitEvent) {
 
 async function addUserToChat(event: SubmitEvent, chatId: number) {
     try {
-        const { userId } = getFormData(event)
+        const { userId } = getFormData(event);
         if (userId && chatId) {
             await ChatController.addUserToChat(chatId, +userId);
             ModalController.close();
@@ -57,14 +57,14 @@ class AddUser extends Block {
             events: {
                 submit: (event: SubmitEvent) => {
                     switch ((event.target as HTMLFormElement).id) {
-                        case "search-form":
-                            searchByLogin(event)
-                            break
-                        case "add-user-form":
-                            addUserToChat(event, this.props.selectedChat)
-                            break
+                        case 'search-form':
+                            searchByLogin(event);
+                            break;
+                        case 'add-user-form':
+                            addUserToChat(event, this.props.selectedChat);
+                            break;
                         default:
-                            break
+                            break;
                     }
                 },
             },
