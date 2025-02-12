@@ -22,6 +22,12 @@
             ],
             "@temp/*": [
                 "src/temp/*"
+            ],
+            "@controllers/*": [
+                "src/controllers/*"
+            ],
+            "@api/*": [
+                "src/api/*"
             ]
         }
     },

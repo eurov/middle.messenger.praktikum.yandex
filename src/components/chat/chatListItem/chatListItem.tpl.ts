@@ -1,12 +1,15 @@
-export default `
-    <div class="chat-list-item__avatar"></div>
-    <div class="chat-list-item__name">{{name}}</div>
-    <div class="chat-list-item__message">
-        {{#if lastMessageIsYours}}
-            <strong class="chat-list-item__mine-mark">You:</strong>
-        {{/if}}
-        {{lastMessage}}
-    </div>
-    <div class="chat-list-item__time">{{time}}</div>
-    <div class="chat-list-item__unread-counter"></div>
-`;
+export default `{{#each chatsList}}
+<li class="chat-item" data-chat={{id}}>
+    {{#if avatar}}
+        <img class='chat-item__avatar' src="https://ya-praktikum.tech/api/v2/resources{{avatar}}" alt="avatar">
+    {{else}}
+        <div class='chat-item__avatar'></div>
+    {{/if}}
+    <div class="chat-item__content-title"">{{title}}</div>
+    {{#if last_message}}
+    <div class="chat-item__content-message">{{last_message.user.login}}: {{last_message.content}}</div>
+    <div class="chat-item__content-date">{{last_message.time}}</div>
+    {{/if}}
+</li>
+{{/each}}`;
+

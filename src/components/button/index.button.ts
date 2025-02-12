@@ -1,10 +1,10 @@
 import template from './button.tpl';
 import { Block } from '@utils/block';
+import { ElementProps } from '@utils/block';
 
 
-interface IButton {
+interface IButton extends ElementProps {
     text: string
-    classes? : string | string[]
 }
 
 export default class Button extends Block<IButton> {

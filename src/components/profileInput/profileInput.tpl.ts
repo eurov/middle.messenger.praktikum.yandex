@@ -1,11 +1,12 @@
 export default `
 <div class="profile__field">
-    <div class="profile__field-caption">{{placeholder}}</div>
+    <div class="profile__field-caption">{{caption}}</div>
     <div class="profile__field-value">
     <input class="profile__field-input{{#if error}} invalid{{/if}}"
             name="{{name}}"
             placeholder="{{placeholder}}"
             value="{{value}}"
+            type="{{#if type}}{{type}}{{else}}text{{/if}}"
             required/>
         {{#if error}}
             <div title="{{error}}" class="input-error">

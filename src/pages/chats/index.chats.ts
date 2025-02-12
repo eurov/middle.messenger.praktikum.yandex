@@ -1,9 +1,9 @@
 import template from './ctats.tpl';
-import { testChatsData } from '@/temp/fixtures.js';
 import { Block } from '@/utils/block';
 
 import DialogPanel from '@/components/chat/dialogPanel/index.dialog';
 import SideBarPanel from '@/components/chat/sidebar/index.sidebar';
+import { ChatController } from '@controllers/chatsController';
 
 
 export default class ChatsPage extends Block {
@@ -11,30 +11,14 @@ export default class ChatsPage extends Block {
         super({
             classes: 'chat__container',
             children: {
-                sideBarPanel: new SideBarPanel(),
-                dialogPanel: new DialogPanel({ messages: [] }),
-            },
-            events: {
-                click: (event: any) => {
-                    document.querySelectorAll('.chat-list-item').forEach(
-                        (item) => item.classList.remove('active'),
-                    );
-                    const targetItem = event.target.closest('.chat-list-item');
-                    if (targetItem) {
-                        targetItem.classList.add('active');
-                        testChatsData.forEach((testItem) => {
-                            if (testItem.uuid == targetItem.id) {
-                                this.children.dialogPanel.setProps({
-                                    name: testItem.name,
-                                    messages: testItem.messages,
-                                });
-
-                            }
-                        });
-                    }
-                }, 
+                sideBarPanel: new SideBarPanel({}),
+                dialogPanel: new DialogPanel({}),
             },
         });
+    }
+
+    async componentDidMount(_oldProps?: Record<string, any> | undefined): Promise<void> {
+        await ChatController.getChats();
     }
 
     render(): DocumentFragment {
