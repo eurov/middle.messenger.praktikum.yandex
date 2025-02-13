@@ -5,7 +5,6 @@ import { ChatController } from '@/controllers/chatsController';
 import Button from '@components/button/index.button';
 import Input from '@components/input/index.input';
 import { ModalController } from '@/controllers/modalController';
-import { getFormData } from '@/utils/helpers';
 
 
 
@@ -37,7 +36,8 @@ class DeleteUser extends Block {
             events: {
                 submit: async (event: SubmitEvent) => {
                     try {
-                        const { userId } = getFormData(event);
+                        const inputData = (event.target as Element).querySelector('.select-user:checked');
+                        const userId = inputData ? (inputData as HTMLInputElement).value : null;
                         if (userId) {
                             await ChatController.deleteUserToChat(this.props.selectedChat, +userId);
                             ModalController.close();
