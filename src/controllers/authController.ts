@@ -6,7 +6,6 @@ import { Routes } from '@/main';
 export class AuthController {
     static async fetchUser() {
         const user = await authApi.getUser();
-        console.log(user);
         store.set('user', user);
     }
 
@@ -23,7 +22,6 @@ export class AuthController {
 
     static async signup(data: ISignupData) {
         try {
-            console.log(data);
             await authApi.signup(data);
             await this.fetchUser();
             router.go(Routes.Chats);
