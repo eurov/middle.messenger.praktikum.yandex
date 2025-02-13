@@ -21,32 +21,32 @@ export class HTTPTransport {
         this.endpoint = `${HTTPTransport.API_URL}${endpoint}`;
     }
 
-    get: HTTPMethod = (path = '/', options?: unknown) => {
+    get: HTTPMethod = (path = '/', options?) => {
         return this.request(this.endpoint + (options ? `${path}${queryStringify(options)}` : path));
     };
 
-    post: HTTPMethod = (path: string, data?: unknown) => {
+    post: HTTPMethod = (path, data) => {
         return this.request(this.endpoint + path, {
             method: Methods.Post,
             data,
         });
     };
 
-    put: HTTPMethod = (path: string, data: unknown) => {
+    put: HTTPMethod = (path, data) => {
         return this.request(this.endpoint + path, {
             method: Methods.Put,
             data,
         });
     };
 
-    patch: HTTPMethod = (path: string, data: unknown) => {
+    patch: HTTPMethod = (path, data) => {
         return this.request(this.endpoint + path, {
             method: Methods.Patch,
             data,
         });
     };
 
-    delete: HTTPMethod = (path: string, data?: unknown) => {
+    delete: HTTPMethod = (path, data) => {
         return this.request(this.endpoint + path, {
             method: Methods.Delete,
             data,

@@ -40,7 +40,7 @@ class ProfileBlock extends Block {
                 profileAvatar: new ProfileAvatar({
                     uploadInput: true,
                     events: {
-                        change: async (event: any) => {
+                        change: async (event: Event) => {
                             const fileTarget = (event.target as HTMLInputElement).files![0];
                             await UserController.changeUserAvatar(fileTarget);
                         },
