@@ -17,7 +17,6 @@ export interface IProfileAvatarProps extends ElementProps {
 
 class ProfileAvatarBlock extends Block {
     constructor({ size = ProfileAvatarSizes.MEDIUM, ...props }: IProfileAvatarProps) {
-        console.log(props);
         super({
             ...props,
             classes: `profile-avatar__${size}`,

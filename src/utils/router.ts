@@ -29,8 +29,8 @@ export class Router {
     }
 
     start() {
-        window.onpopstate = (event: any) => {
-            this._onRoute(event.currentTarget?.location.pathname);
+        window.onpopstate = (event: Event) => {
+            this._onRoute((event.currentTarget as Document)?.location.pathname);
         };
         this._onRoute(window.location.pathname);
     }
