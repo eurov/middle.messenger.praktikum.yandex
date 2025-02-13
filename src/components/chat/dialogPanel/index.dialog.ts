@@ -40,7 +40,7 @@ class ChatMessagesBlock extends Block {
                 messageCards: new MessageCard({}),
                 avatar: new Avatar({
                     events: {
-                        change: async (event: any) => {
+                        change: async (event: Event) => {
                             const fileTarget = (event.target as HTMLInputElement).files![0];
                             if (this.props.selectedChat) {
                                 await ChatController
