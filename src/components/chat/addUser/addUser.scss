@@ -1,0 +1,39 @@
+.delete-user,
+.add-user {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow: auto;
+
+    
+    &__card {
+        cursor: pointer;
+        display: flex;
+        margin: 5px 0;
+    }
+
+    .select-user {
+        margin-right: 10px;
+        width: 10px;
+    }
+}
+
+.search-container {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+    
+    .search-button {
+        background-color: #EAEAEA;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        height: 30px;
+    }
+}
+
+h4 {
+    color: var(--color-text-gray);
+
+}

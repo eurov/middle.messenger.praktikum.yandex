@@ -1,39 +1,33 @@
 export default `
-{{#if messages}}
+{{#if selectedChat}}
 <div class="chat-dialog">
     <div class="chat-dialog__header">
-        <div class="chat-dialog__avatar"></div>
-        <div class="chat-dialog__name">{{name}}</div>
-        <button class="chat-dialog__menu-button">
-            {{!-- <img src="#" /> --}}
-           </button>
-    </div>
-    <div class="chat-dialog__messages">
-        <div class="chat-dialog__date-label">June 19</div>
-        {{#each messages}}
-        <div class="chat-dialog__message{{#if this.senderIsYou}} chat-dialog__message_yours{{/if}}">
-            <div class="chat-dialog__message-text">{{this.text}}</div>
-            <div class="chat-dialog__message-time">
-                {{#if this.delivered}}
-                {{!-- <img src="#" /> --}}
-                {{/if}}
-                {{this.time}}
+        <div class="chat-dialog__header-left">
+            {{{avatar}}}{{chat.title}}
+        </div>
+        <div class="chat-dialog__header-button">
+            <div class="chat-dialog__header-button-action">
+                <img alt="icon" src="/three-dots-vertical.svg">
+                <div class="chat-dialog__header-list">
+                    <div>{{{addUser}}}</div>
+                    <div>{{{deleteUser}}}</div>
+                </div>
             </div>
         </div>
-        {{/each}}
     </div>
-    <div class="chat-dialog__input-container">
+    {{{messageCards}}}
+    <form class="chat-dialog__input-container">
         <input class="chat-dialog__input"
-            placeholder="Message"
+            placeholder="Enter a message"
             name="message"
             required/>
-        <button type="button" class="chat-dialog__send">
-            {{!-- <img src="#" /> --}}
+        <button type="submit" class="chat-dialog__send">
+            <img src="/arrow-up-short.svg" />
         </button>
+    </form>
+    {{else}}
+    <div class="container centered">
+        <div class="chat__empty-message">Select a chat to open a dialog box</div>
     </div>
-</div>
-{{else}}
-<div class="container centered">
-    <div class="chat__empty-message">Select a chat to open a dialog box</div>
 </div>
 {{/if}}`;

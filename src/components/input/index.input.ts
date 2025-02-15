@@ -20,19 +20,19 @@ export default class Input extends Block<IInputProps> {
             ...props,
             classes: 'input',
             events: {
-                blur: (event: any) => {
-                    const validateResult = validateInput(event.target.value, props.rules || []);
+                blur: (event: Event) => {
+                    const validateResult = validateInput((event.target as HTMLInputElement).value, props.rules || []);
                     if (validateResult) {
                         this.setProps({
                             ...this.props,
                             error: validateResult,
-                            value: event.target.value,
+                            value: (event.target as HTMLInputElement).value,
                         });
                     } else {
                         this.setProps({
                             ...this.props,
                             error: false,
-                            value: event.target.value,
+                            value: (event.target as HTMLInputElement).value,
                         });
                     }
                 },

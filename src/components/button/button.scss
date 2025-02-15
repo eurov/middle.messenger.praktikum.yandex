@@ -21,4 +21,18 @@
             background: var(--color-dark-blue);
         }
     }
+
+    &.secondary {
+        background: var(--color-bg-gray);
+        color: var(--color-blue);
+        font-size: 13px;
+        transition: 0.3s background;
+        width: 100%;
+
+        &:hover,
+        &:focus {
+            background: var(--color-bg-dark-gray);
+        }
+    }
 }
+

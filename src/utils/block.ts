@@ -4,11 +4,10 @@ import EventBus from './eventBus';
 
 type ObjectType = Record<string, any>;
 
-type ElementProps = {
+export type ElementProps = {
     classes?: string | string[],
     events?: Record<string, any>,
     children?: Record<string, Block>
-    attributes?: Record<string, string>
 };
 
 export abstract class Block<Props extends Record<string, any> = any> {
@@ -57,7 +56,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
         const { tagName } = this._meta;
         this._element = this._createDocumentElement(tagName);
         this._setClassList();
-        this._setAttrs();
     }
 
     initChildren(): void { }
@@ -76,6 +74,15 @@ export abstract class Block<Props extends Record<string, any> = any> {
 
     dispatchComponentDidMount(): void {
         this.eventBus().emit(Block.EVENTS.FLOW_CDM);
+        Object.values(this.children).forEach((child) => {
+            if (Array.isArray(child)) {
+                child.forEach((ch) => {
+                    ch.dispatchComponentDidMount();
+                });
+            } else {
+                child.dispatchComponentDidMount();
+            }
+        });
     }
 
     _componentDidUpdate(oldProps: ObjectType, newProps: ObjectType): void {
@@ -113,6 +120,7 @@ export abstract class Block<Props extends Record<string, any> = any> {
         this._element.innerHTML = '';
         this._element.append(block);
         this._setEvents();
+        this.dispatchComponentDidMount();
     }
 
     render(): any { }
@@ -214,14 +222,6 @@ export abstract class Block<Props extends Record<string, any> = any> {
         }
     }
 
-    _setAttrs(): void {
-        const { attributes = null } = this.props;
-        if (attributes !== null) {
-            Object.entries(attributes).forEach(([key, value]: [string, any]) => {
-                this._element.setAttribute(key, value.toString());
-            });
-        }
-    }
 
     show(): void {
         this.getContent().style.display = 'block';

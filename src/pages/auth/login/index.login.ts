@@ -2,13 +2,15 @@ import template from './login.tpl';
 import { Block } from '@utils/block';
 import Input from '@/components/input/index.input';
 import Button from '@/components/button/index.button';
-import { validateSignin } from '@/utils/helpers';
+import { AuthController } from '@/controllers/authController';
+import { getFormData } from '@utils/helpers';
+import { ISigninData } from '@api/authApi';
 
 
 
 const input = [new Input({
     name: 'login',
-    placeholder: 'Username',
+    placeholder: 'Login',
     rules: ['login-valid'],
     required: true,
 }), new Input({
@@ -25,6 +27,10 @@ const button = [new Button({
 })];
 
 
+async function onSubmit(event: SubmitEvent) {
+    await AuthController.signin(getFormData(event) as ISigninData);
+}
+
 
 export default class LoginPage extends Block {
     constructor() {
@@ -35,7 +41,7 @@ export default class LoginPage extends Block {
                 button,
             },
             events: {
-                submit: validateSignin,
+                submit: onSubmit,
             },
         });
     }

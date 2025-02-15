@@ -1,15 +1,21 @@
 export default `
-<a class="chat__profile-link" href="/profile">Profile</a>
-<div class="chat__search-container">
-    <input class="chat__search"
+
+<header class='chat-list__header'>
+    <div class="actions-container">
+        {{{newChatButton}}}
+        {{{profileLink}}}
+    </div>
+    <div>
+    <input class="chat-list__search"
         placeholder="Search"
         type="text"
         name="search"/>
-</div>
+    </div>
+</header>
 
-<ul class="chat__chats-list">
-    {{{chatItems}}}
-</ul>`;
+{{{chatItems}}}
+{{{modal}}}
+`;
 
 
 
