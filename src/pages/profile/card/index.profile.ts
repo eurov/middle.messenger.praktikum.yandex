@@ -1,12 +1,12 @@
 import template from './profile.tpl';
-import { Block } from '@/utils/block';
-import Link from '@/components/link/index.link';
-import { Routes } from '@/main';
-import { router } from '@utils/router';
-import { AuthController } from '@/controllers/authController';
-import { IState, withStore } from '@/utils/store';
-import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar';  
-import { UserController } from '@/controllers/userController';
+import { Block } from '../../../utils/block';
+import Link from '../../../components/link/index.link';
+import { Routes } from '../../../main';
+import { router } from '../../../utils/router';
+import { AuthController } from '../../../controllers/authController';
+import { IState, withStore } from '../../../utils/store';
+import { ProfileAvatar } from '../../../components/profileAvatar/index.profileAvatar';  
+import { UserController } from '../../../controllers/userController';
 
 
 

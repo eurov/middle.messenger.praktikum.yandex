@@ -1,14 +1,14 @@
 import template from './changeData.tpl';
-import { Block } from '@/utils/block';
-import Button from '@/components/button/index.button';
-import ProfileInput from '@/components/profileInput/index.profileinput';
-import { getFormData } from '@utils/helpers';
-import { IState, withStore } from '@/utils/store';
-import { UserController } from '@/controllers/userController';
-import { Routes } from '@/main';
-import { router } from '@utils/router';
-import { IUser } from '@/api/authApi';
-import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar';  
+import { Block } from '../../../utils/block';
+import Button from '../../../components/button/index.button';
+import ProfileInput from '../../../components/profileInput/index.profileinput';
+import { getFormData } from '../../../utils/helpers';
+import { IState, withStore } from '../../../utils/store';
+import { UserController } from '../../../controllers/userController';
+import { Routes } from '../../../main';
+import { router } from '../../../utils/router';
+import { IUser } from '../../../api/authApi';
+import { ProfileAvatar } from '../../../components/profileAvatar/index.profileAvatar';  
 
 
 async function onSubmit(event: SubmitEvent) {

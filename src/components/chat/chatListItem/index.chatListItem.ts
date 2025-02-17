@@ -1,8 +1,8 @@
 import template from './chatListItem.tpl';
-import { Block } from '@/utils/block';
-import { withStore, IState } from '@/utils/store';
-import { ElementProps } from '@utils/block';
-import { ChatController } from '@controllers/chatsController';
+import { Block } from '../../../utils/block';
+import { withStore, IState } from '../../../utils/store';
+import { ElementProps } from '../../../utils/block';
+import { ChatController } from '../../../controllers/chatsController';
 
 
 const getChatId = (element: EventTarget | null): string | null => {

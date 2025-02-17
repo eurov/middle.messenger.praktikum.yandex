@@ -1,9 +1,9 @@
 import template from './ctats.tpl';
-import { Block } from '@/utils/block';
+import { Block } from '../../utils/block';
 
-import DialogPanel from '@/components/chat/dialogPanel/index.dialog';
-import SideBarPanel from '@/components/chat/sidebar/index.sidebar';
-import { ChatController } from '@controllers/chatsController';
+import DialogPanel from '../../components/chat/dialogPanel/index.dialog';
+import SideBarPanel from '../../components/chat/sidebar/index.sidebar';
+import { ChatController } from '../../controllers/chatsController';
 
 
 export default class ChatsPage extends Block {

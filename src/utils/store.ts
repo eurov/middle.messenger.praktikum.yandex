@@ -1,10 +1,10 @@
 
 import { set } from './helpers';
 import EventBus from './eventBus';
-import { Block } from '@utils/block';
-import { IUser } from '@/api/authApi';
-import { IChat, IChatUser } from '@api/chatApi';
-import { Message } from '@controllers/messageController';
+import { Block } from '../utils/block';
+import { IUser } from '../api/authApi';
+import { IChat, IChatUser } from '../api/chatApi';
+import { Message } from '../controllers/messageController';
 
 
 export enum StoreEvents {

@@ -1,7 +1,7 @@
-import { store } from '@utils/store';
-import authApi, { ISigninData, ISignupData } from '@/api/authApi';
-import { router } from '@utils/router';
-import { Routes } from '@/main';
+import { store } from '../utils/store';
+import authApi, { ISigninData, ISignupData } from '../api/authApi';
+import { router } from '../utils/router';
+import { Routes } from '../main';
 
 export class AuthController {
     static async fetchUser() {

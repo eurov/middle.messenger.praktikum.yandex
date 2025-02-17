@@ -1,6 +1,6 @@
 import template from './avatar.tpl';
-import { Block, ElementProps } from '@utils/block';
-import { withStore, IState } from '@/utils/store';
+import { Block, ElementProps } from '../../utils/block';
+import { withStore, IState } from '../../utils/store';
 
 
 class Avatar extends Block {

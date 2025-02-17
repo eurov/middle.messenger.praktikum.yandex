@@ -1,13 +1,13 @@
 import template from './changePassword.tpl';
-import { Block } from '@/utils/block';
-import Button from '@/components/button/index.button';
-import ProfileInput from '@/components/profileInput/index.profileinput';
-import { getFormData } from '@utils/helpers';
-import { withStore } from '@utils/store';
-import { IState } from '@utils/store';
-import { UserController } from '@/controllers/userController';
-import { IChangePassword } from '@/api/userApi';
-import { ProfileAvatar } from '@/components/profileAvatar/index.profileAvatar';  
+import { Block } from '../../../utils/block';
+import Button from '../../../components/button/index.button';
+import ProfileInput from '../../../components/profileInput/index.profileinput';
+import { getFormData } from '../../../utils/helpers';
+import { withStore } from '../../../utils/store';
+import { IState } from '../../../utils/store';
+import { UserController } from '../../../controllers/userController';
+import { IChangePassword } from '../../../api/userApi';
+import { ProfileAvatar } from '../../../components/profileAvatar/index.profileAvatar';  
 
 
 const InputProps = [{

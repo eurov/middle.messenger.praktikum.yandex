@@ -1,6 +1,6 @@
 import template from './button.tpl';
-import { Block } from '@utils/block';
-import { ElementProps } from '@utils/block';
+import { Block } from '../../utils/block';
+import { ElementProps } from '../../utils/block';
 
 
 interface IButton extends ElementProps {

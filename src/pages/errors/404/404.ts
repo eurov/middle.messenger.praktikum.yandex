@@ -1,5 +1,5 @@
 import tamplate from './404.tpl';
-import { Block } from '@utils/block';
+import { Block } from '../../../utils/block';
 
 
 export default class NotFoundPage extends Block {

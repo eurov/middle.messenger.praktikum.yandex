@@ -1,6 +1,6 @@
 import input from './profileInput.tpl';
-import { Block } from '@utils/block';
-import { validateInput } from '@/utils/helpers';
+import { Block } from '../../utils/block';
+import { validateInput } from '../../utils/helpers';
 
 
 interface IInputProps {

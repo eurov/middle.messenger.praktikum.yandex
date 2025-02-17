@@ -1,10 +1,10 @@
 import template from './createChat.tpl';
-import { ChatController } from '@controllers/chatsController';
-import { ModalController } from '@/controllers/modalController';
-import Button from '@components/button/index.button';
-import Input from '@components/input/index.input';
-import { getFormData } from '@utils/helpers';
-import { Block, ElementProps } from '@utils/block';
+import { ChatController } from '../../controllers/chatsController';
+import { ModalController } from '../../controllers/modalController';
+import Button from '../../components/button/index.button';
+import Input from '../../components/input/index.input';
+import { getFormData } from '../../utils/helpers';
+import { Block, ElementProps } from '../../utils/block';
 
 
 async function onClick(event: SubmitEvent) {

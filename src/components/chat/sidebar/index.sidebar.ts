@@ -1,11 +1,11 @@
 import template from './sidebar.tpl';
-import { Block } from '@/utils/block';
-import { ChatItem } from '@/components/chat/chatListItem/index.chatListItem';
-import Link from '@/components/link/index.link';
-import { ModalController } from '@controllers/modalController';
-import { ModalTypes } from '@/utils/store';
-import { Modal } from '@/components/modal/index.modal';
-import Button from '@/components/button/index.button';
+import { Block } from '../../../utils/block';
+import { ChatItem } from '../../../components/chat/chatListItem/index.chatListItem';
+import Link from '../../../components/link/index.link';
+import { ModalController } from '../../../controllers/modalController';
+import { ModalTypes } from '../../../utils/store';
+import { Modal } from '../../../components/modal/index.modal';
+import Button from '../../../components/button/index.button';
 
 
 const onClick = () => {

@@ -1,6 +1,6 @@
 import template from './profileAvatar.tpl';
-import { Block, ElementProps } from '@/utils/block';
-import { withStore, IState } from '@/utils/store';
+import { Block, ElementProps } from '../../utils/block';
+import { withStore, IState } from '../../utils/store';
 
 
 export enum ProfileAvatarSizes {
