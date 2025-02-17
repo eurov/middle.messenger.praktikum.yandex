@@ -9,27 +9,7 @@
         "strictNullChecks": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
-        "baseUrl": ".",
-        "paths": {
-            "@/*": [
-                "src/*"
-            ],
-            "@components/*": [
-                "src/components/*"
-            ],
-            "@utils/*": [
-                "src/utils/*"
-            ],
-            "@temp/*": [
-                "src/temp/*"
-            ],
-            "@controllers/*": [
-                "src/controllers/*"
-            ],
-            "@api/*": [
-                "src/api/*"
-            ]
-        }
+        "baseUrl": "."
     },
     "include": [
         "src/**/*.ts",
