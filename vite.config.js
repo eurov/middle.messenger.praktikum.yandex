@@ -3,6 +3,14 @@ import { resolve } from 'path';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
+    define: {
+        global: {},
+    },
+    resolve: {
+        alias: {
+            crypto: 'crypto-js',
+        },
+    },
     build: {
         rollupOptions: {
             input: {
