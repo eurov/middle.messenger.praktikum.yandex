@@ -18,7 +18,8 @@
     "start": "vite build && node server.cjs",
     "precommit": "npm run test && npm run lint && npm run lint:style",
     "test": "mocha",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postinstall": "husky install && cp .husky/pre-commit .git/hooks/pre-commit"
   },
   "husky": {
     "hooks": {
@@ -41,7 +42,7 @@
     "chai": "^5.2.0",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
-    "husky": "^9.1.7",
+    "husky": "^7.0.4",
     "jsdom": "^26.0.0",
     "mocha": "^11.1.0",
     "node-esm-loader": "^0.3.0",
