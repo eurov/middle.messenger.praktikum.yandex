@@ -16,5 +16,5 @@
         ".eslintrc.cjs",
         "vite.config.js",
         "mochaSetup.js"
-    ],
+    ]
 }
