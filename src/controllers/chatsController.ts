@@ -1,5 +1,5 @@
-import { store } from '@utils/store';
-import chatsApi from '@api/chatApi';
+import { store } from '../utils/store';
+import chatsApi from '../api/chatApi';
 import MessagesController from './messageController';
 
 

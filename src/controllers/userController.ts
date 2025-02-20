@@ -1,8 +1,8 @@
-import { Routes } from '@/main';
-import { router } from '@utils/router';
-import { store } from '@utils/store';
-import userApi, { IChangePassword } from '@/api/userApi';
-import { IUser } from '@/api/authApi';
+import { Routes } from '../main';
+import { router } from '../utils/router';
+import { store } from '../utils/store';
+import userApi, { IChangePassword } from '../api/userApi';
+import { IUser } from '../api/authApi';
 
 export class UserController {
     static async changeUserProfile(data: IUser) {

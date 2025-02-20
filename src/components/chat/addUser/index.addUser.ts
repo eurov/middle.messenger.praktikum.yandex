@@ -1,12 +1,12 @@
 import template from './addUser.tpl';
-import { Block } from '@utils/block';
-import Button from '@components/button/index.button';
-import Input from '@components/input/index.input';
-import { UserController } from '@/controllers/userController';
-import { ChatController } from '@/controllers/chatsController';
-import { withStore, IState } from '@/utils/store';
-import { getFormData } from '@utils/helpers';
-import { ModalController } from '@/controllers/modalController';
+import { Block } from '../../../utils/block';
+import Button from '../../../components/button/index.button';
+import Input from '../../../components/input/index.input';
+import { UserController } from '../../../controllers/userController';
+import { ChatController } from '../../../controllers/chatsController';
+import { withStore, IState } from '../../../utils/store';
+import { getFormData } from '../../../utils/helpers';
+import { ModalController } from '../../../controllers/modalController';
 
 async function searchByLogin(event: SubmitEvent) {
     try {

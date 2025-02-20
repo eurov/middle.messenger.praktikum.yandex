@@ -1,4 +1,4 @@
-import { ModalTypes, store } from '@/utils/store';
+import { ModalTypes, store } from '../utils/store';
 
 export class ModalController {
     static open(type: ModalTypes) {

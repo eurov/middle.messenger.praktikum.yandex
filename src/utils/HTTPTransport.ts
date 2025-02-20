@@ -1,6 +1,6 @@
-import queryStringify from '@/utils/queryString';
+import queryStringify from '../utils/queryString';
 
-enum Methods {
+export enum Methods {
     Get = 'Get',
     Post = 'Post',
     Put = 'Put',

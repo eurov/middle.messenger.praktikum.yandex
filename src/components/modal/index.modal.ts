@@ -1,11 +1,11 @@
 import template from './modal.tpl';
-import { withStore, IState } from '@utils/store';
-import { Block, ElementProps } from '@utils/block';
-import Button from '@components/button/index.button';
-import { ModalController } from '@controllers/modalController';
-import { CreateChat } from '@components/createChat/index.createChat';
-import AddUser from '@/components/chat/addUser/index.addUser';
-import DeleteUser from '@components/chat/deleteUser/index.deleteUser';
+import { withStore, IState } from '../../utils/store';
+import { Block, ElementProps } from '../../utils/block';
+import Button from '../../components/button/index.button';
+import { ModalController } from '../../controllers/modalController';
+import { CreateChat } from '../../components/createChat/index.createChat';
+import AddUser from '../../components/chat/addUser/index.addUser';
+import DeleteUser from '../../components/chat/deleteUser/index.deleteUser';
 
 
 class ModalBlock extends Block {

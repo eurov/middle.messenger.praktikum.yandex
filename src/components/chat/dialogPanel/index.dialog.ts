@@ -1,13 +1,13 @@
 import template from './dialog.tpl';
-import { Block } from '@utils/block';
-import  MessagesController from '@/controllers/messageController';
-import { ModalController } from '@/controllers/modalController';
-import { ChatController } from '@/controllers/chatsController';
-import MessageCard from '@components/chat/messageCard/index.messageCard';
-import ModalItem from '@/components/modal/index.modalItem';
-import Avatar from '@/components/avatar/index.avatar';
-import { getFormData } from '@/utils/helpers';
-import { withStore, IState, ModalTypes } from '@/utils/store';
+import { Block } from '../../../utils/block';
+import  MessagesController from '../../../controllers/messageController';
+import { ModalController } from '../../../controllers/modalController';
+import { ChatController } from '../../../controllers/chatsController';
+import MessageCard from '../../../components/chat/messageCard/index.messageCard';
+import ModalItem from '../../../components/modal/index.modalItem';
+import Avatar from '../../../components/avatar/index.avatar';
+import { getFormData } from '../../../utils/helpers';
+import { withStore, IState, ModalTypes } from '../../../utils/store';
 
 
 class ChatMessagesBlock extends Block {

@@ -1,5 +1,5 @@
 import template from './link.tpl';
-import { Block, ElementProps } from '@utils/block';
+import { Block, ElementProps } from '../../utils/block';
 
 
 

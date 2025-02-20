@@ -1,12 +1,12 @@
-import { router } from '@/utils/router';
-import { AuthController } from '@controllers/authController';
-import '@components/partials.js';
-import LoginPage from '@/pages/auth/login/index.login';
-import SignupPage from '@/pages/auth/signup/index.signup';
-import ChatsPage from '@/pages/chats/index.chats';
-import { ProfilePage } from '@/pages/profile/card/index.profile.js';
-import { ChangeDataPage } from '@/pages/profile/changeData/index.changeData.js';
-import { ChangePasswordPage } from '@/pages/profile/changePassword/index.changePassword.js';
+import { router } from './utils/router';
+import { AuthController } from './controllers/authController';
+import './components/partials.js';
+import LoginPage from './pages/auth/login/index.login';
+import SignupPage from './pages/auth/signup/index.signup';
+import ChatsPage from './pages/chats/index.chats';
+import { ProfilePage } from './pages/profile/card/index.profile.js';
+import { ChangeDataPage } from './pages/profile/changeData/index.changeData.js';
+import { ChangePasswordPage } from './pages/profile/changePassword/index.changePassword.js';
 import NotFoundPage from './pages/errors/404/404.js';
 
 

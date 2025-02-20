@@ -10,5 +10,7 @@ The app is deployed on [netlify](https://incandescent-puffpuff-d633a3.netlify.ap
 ## Quick start
 - `npm i` - install all dependencies,
 - `npm run dev` — run the app on dev server,
-- `npm run start` — start server at port 3000
+- `npm run test` — run tests,
+- `npm run build` — build app dist,
+- `npm run start` — start server on port 3000
 

@@ -1,10 +1,10 @@
 import template from './deleteUser.tpl';
-import { Block, ElementProps } from '@/utils/block';
-import { withStore, IState } from '@/utils/store';
-import { ChatController } from '@/controllers/chatsController';
-import Button from '@components/button/index.button';
-import Input from '@components/input/index.input';
-import { ModalController } from '@/controllers/modalController';
+import { Block, ElementProps } from '../../../utils/block';
+import { withStore, IState } from '../../../utils/store';
+import { ChatController } from '../../../controllers/chatsController';
+import Button from '../../../components/button/index.button';
+import Input from '../../../components/input/index.input';
+import { ModalController } from '../../../controllers/modalController';
 
 
 

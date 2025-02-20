@@ -1,7 +1,7 @@
 
 import template from './messageCard.tpl';
-import { withStore, IState } from '@utils/store';
-import { Block } from '@utils/block';
+import { withStore, IState } from '../../../utils/store';
+import { Block } from '../../../utils/block';
 
 
 class MessageCard extends Block {

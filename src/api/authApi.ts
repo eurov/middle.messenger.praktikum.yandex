@@ -1,4 +1,4 @@
-import { BaseApi } from '@/api/baseApi';
+import { BaseApi } from './baseApi';
 
 
 export interface ISignupData extends Record<string, string> {

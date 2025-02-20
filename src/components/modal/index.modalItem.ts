@@ -1,4 +1,4 @@
-import { Block, ElementProps } from '@/utils/block';
+import { Block, ElementProps } from '../../utils/block';
 
 export default class ModalItemBlock extends Block {
     constructor(props: { text: string, style?: string, } & ElementProps) {

@@ -1,10 +1,10 @@
 import template from './login.tpl';
-import { Block } from '@utils/block';
-import Input from '@/components/input/index.input';
-import Button from '@/components/button/index.button';
-import { AuthController } from '@/controllers/authController';
-import { getFormData } from '@utils/helpers';
-import { ISigninData } from '@api/authApi';
+import { Block } from '../../../utils/block';
+import Input from '../../../components/input/index.input';
+import Button from '../../../components/button/index.button';
+import { AuthController } from '../../../controllers/authController';
+import { getFormData } from '../../../utils/helpers';
+import { ISigninData } from '../../../api/authApi';
 
 
 
